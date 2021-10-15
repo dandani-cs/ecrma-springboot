@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "67676426-1370-4b1e-8ead-a9b797c52732",
+		"name": "ElecPerTester",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addElecper",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"archived\": \"false\",\r\n    \"fdate\": \"2000-01-01\",\r\n\t\"name\": \"elecper2\",\r\n\t\"sdate\": \"2000-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:18080/ElecperTester/addElecper",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18080",
+					"path": [
+						"ElecperTester",
+						"addElecper"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteElecper",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:18080/ElecperTester/deleteElecper/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18080",
+					"path": [
+						"ElecperTester",
+						"deleteElecper",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateElecper",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"elecper_id\": 10,\r\n    \"archived\": \"true\",\r\n    \"fdate\": \"2012-01-01\",\r\n\t\"name\": \"elecper2.1\",\r\n\t\"sdate\": \"2012-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:18080/ElecperTester/updateElecper/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18080",
+					"path": [
+						"ElecperTester",
+						"updateElecper",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateElecperArchive",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:18080/ElecperTester/updateElecperArchive/10/true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18080",
+					"path": [
+						"ElecperTester",
+						"updateElecperArchive",
+						"10",
+						"true"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getElecpers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:18080/ElecperTester/getElecpers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18080",
+					"path": [
+						"ElecperTester",
+						"getElecpers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getElecper",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:18080/ElecperTester/getElecper/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18080",
+					"path": [
+						"ElecperTester",
+						"getElecper",
+						"10"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
