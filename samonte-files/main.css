@@ -2,6 +2,22 @@ body {
   background-color: #E8E8E8;
 }
 
+.bg-dark {
+  background-color: #215275 !important;
+}
+
+.btn-main {
+  background-color: #215275;
+}
+
+.card-title, .main-color {
+  color: #215275;
+}
+
+.card i:hover {
+  color: #215275;
+}
+
 .main-content {
   margin: 50px;
 }
