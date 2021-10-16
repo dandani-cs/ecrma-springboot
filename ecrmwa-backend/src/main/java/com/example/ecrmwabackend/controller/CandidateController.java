@@ -20,6 +20,15 @@ public class CandidateController {
     @RequestMapping("/api/get-candidate/{id}")
     public Candidate getCandidate(@PathVariable long id) { return service.getCandidate(id); }
 
+    @RequestMapping("/api/find-candidate-by-name")
+    public List<Candidate> findByName(@RequestParam String searchString) { return service.findByName(searchString); }
+
     @RequestMapping(value = "/api/add-candidate", method = RequestMethod.POST)
     public Candidate addCandidate(@RequestBody Candidate candidate) { return service.addCandidate(candidate); }
+
+    @RequestMapping(value = "/api/update-candidate", method = RequestMethod.POST)
+    public Candidate updateCandidate(@RequestBody Candidate candidate) { return service.updateCandidate(candidate); }
+
+    @RequestMapping(value = "/api/delete-candidate/{id}")
+    public void deleteCandidate(@PathVariable long id) { service.deleteCandidate(service.getCandidate(id)); }
 }

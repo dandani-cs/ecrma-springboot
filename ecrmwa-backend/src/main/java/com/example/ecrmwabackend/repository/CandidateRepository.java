@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface CandidateRepository extends CrudRepository<Candidate, Long> {
-    @Query("SELECT * FROM candidates * WHERE CONCAT(first_name, last_name, middle_initial) like %:searchString%")
+    @Query("SELECT c FROM Candidate c WHERE CONCAT(c.first_name, c.last_name, c.middle_initial) like %:searchString%")
     List<Candidate> findByName(@Param("searchString") String searchString);
 }

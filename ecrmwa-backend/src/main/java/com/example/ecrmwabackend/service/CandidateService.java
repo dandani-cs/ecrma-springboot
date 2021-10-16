@@ -3,10 +3,12 @@ package com.example.ecrmwabackend.service;
 import com.example.ecrmwabackend.model.Candidate;
 import com.example.ecrmwabackend.repository.CandidateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CandidateService implements ICandidateService {
     @Autowired
     private CandidateRepository repository;
