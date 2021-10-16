@@ -3,21 +3,60 @@ package com.example.ecrmwabackend.service;
 import com.example.ecrmwabackend.model.Candidate;
 import com.example.ecrmwabackend.repository.CandidateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
+// <<<<<<< Campaign-Elecper
+// import org.springframework.data.repository.CrudRepository;
+// import org.springframework.stereotype.Service;
+
+// import java.util.Optional;
+
+// @Service
+// public class CandidateService {
+//     @Autowired
+//     private CandidateRepository repository;
+
+//     public Candidate getCandidate(Long id) {
+//         Optional optional = repository.findById(id);
+//         if(optional.isEmpty())
+//             return null;
+//         else
+//             return (Candidate) optional.get();
+// =======
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CandidateService {
+public class CandidateService implements ICandidateService {
     @Autowired
     private CandidateRepository repository;
 
-    public Candidate getCandidate(Long id) {
-        Optional optional = repository.findById(id);
-        if(optional.isEmpty())
-            return null;
-        else
-            return (Candidate) optional.get();
+    @Override
+    public List<Candidate> findAll() { return (List<Candidate>) repository.findAll(); }
+
+    @Override
+    public List<Candidate> findByName(String searchString) {
+        return (List<Candidate>) repository.findByName(searchString);
+    }
+
+    @Override
+    public Candidate addCandidate(Candidate candidate) {
+        return repository.save(candidate);
+    }
+
+    @Override
+    public Candidate updateCandidate(Candidate candidate) {
+        return repository.save(candidate);
+    }
+
+    @Override
+    public void deleteCandidate(Candidate candidate) {
+        repository.delete(candidate);
+    }
+
+    @Override
+    public Candidate getCandidate(long id) {
+        Optional<Candidate> candidate = repository.findById(id);
+        return candidate.isEmpty() ? null : candidate.get();
     }
 }
