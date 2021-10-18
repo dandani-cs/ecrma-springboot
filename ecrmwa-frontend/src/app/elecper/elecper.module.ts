@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { ElecperRoutingModule } from './elecper-routing.module';
 import { ElecperComponent } from './elecper.component';
+import { ShowElecpersComponent } from './show-elecpers/show-elecpers.component';
 
 
 @NgModule({
   declarations: [
-    ElecperComponent
+    ElecperComponent,
+    ShowElecpersComponent
   ],
   imports: [
     CommonModule,
