@@ -461,6 +461,14 @@ a, a:hover, a:focus, a:active {
 	padding-bottom: 10px;
 }
 
+.services-con{
+    margin: 0 auto;
+}
+
+#icon{
+    display: block;
+    margin: 0 auto;
+}
 .services
 {
 	margin-top: 0px;
