@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import {HttpClientModule} from '@angular/common/http';
+import { AddElectionPeriodFormComponent } from './add-election-period-form/add-election-period-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AddElectionPeriodFormComponent,
   ],
   imports: [
     BrowserModule,
