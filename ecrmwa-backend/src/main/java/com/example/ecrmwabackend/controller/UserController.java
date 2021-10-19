@@ -3,13 +3,12 @@ package com.example.ecrmwabackend.controller;
 import com.example.ecrmwabackend.model.User;
 import com.example.ecrmwabackend.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
+
+@CrossOrigin(origins = "http://localhost:4200")
 
 @RestController
 public class UserController {
@@ -27,14 +26,12 @@ public class UserController {
     public User logoutUser(@RequestBody String uuid)
     {
         User authUser = service.findByUUID(uuid);
-
         if(authUser != null)
         {
             authUser.setIs_logged_in(false);
             authUser.setUuid("");
             service.updateUser(authUser);
         }
-
         return authUser;
     }
 

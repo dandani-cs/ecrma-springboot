@@ -1,0 +1,8 @@
+<p>Login here!</p>
+<form #loginForm = "ngForm" (ngSubmit) = "onLoginUser(loginForm)">
+    <input type = "text" ngModel name = "email" id = "email"/>
+    <input type = "password" ngModel name = "password" id = "password"/>
+    <button type="submit">Login</button>
+</form>
+
+<button (click)="onLogoutUser()">Logout</button>
