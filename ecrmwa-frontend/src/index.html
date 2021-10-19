@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
 
    <!-- CSS STYLE SHEETS -->
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
    <link rel ="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&display=swap" rel="stylesheet">
@@ -21,9 +22,9 @@
      <!-- scripts -->
 <script src="/assets/js/script.js"> </script>
 <script src="/assets/js/jquery.js"> </script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" ></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script>
     setTimeout(function(){
@@ -42,15 +43,13 @@
     $(document).on('click','.sign-up-btn',function(){
         $('.side-sign-up').addClass('side-sign-up-active')
     });
-
+ 
     $(document).on('click','.sign-up-cancel-btn,.login-cancel-btn',function(){
         $('.main').removeClass('main-active')
     });
-
     $(document).on('click','.login-cancel-btn',function(){
         $('.side-login').removeClass('side-login-active')
     });
-    
     $(document).on('click','.sign-up-cancel-btn',function(){
         $('.side-sign-up').removeClass('side-sign-up-active')
     });
