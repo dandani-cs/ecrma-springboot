@@ -13,18 +13,22 @@ public class User {
 
     private String email;
     private String password;
+    private String uuid;
     private Boolean is_admin;
+    private Boolean is_logged_in;
 
     public User()
     {
 
     }
 
-    public User(long id, String email, String password, Boolean is_admin) {
+    public User(long id, String email, String password, String uuid, Boolean is_admin, Boolean is_logged_in) {
         this.setId(id);
         this.setEmail(email);
         this.setPassword(password);
+        this.setUuid(uuid);
         this.setIs_admin(is_admin);
+        this.setIs_logged_in(is_logged_in);
     }
 
     public long getId() {
@@ -59,6 +63,22 @@ public class User {
         this.is_admin = is_admin;
     }
 
+    public Boolean getIs_logged_in() {
+        return is_logged_in;
+    }
+
+    public void setIs_logged_in(Boolean is_logged_in) {
+        this.is_logged_in = is_logged_in;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String recent_uuid) {
+        this.uuid = recent_uuid;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -80,6 +100,9 @@ public class User {
         if (!Objects.equals(this.is_admin, other.is_admin)) {
             return false;
         }
+        if (!Objects.equals(this.is_logged_in, other.is_logged_in)) {
+            return false;
+        }
         return Objects.equals(this.id, other.id);
     }
 
@@ -90,6 +113,7 @@ public class User {
         hash = 79 * hash + Objects.hashCode(this.email);
         hash = 79 * hash + Objects.hashCode(this.password);
         hash = 79 * hash + Objects.hashCode(this.is_admin);
+        hash = 79 * hash + Objects.hashCode(this.is_logged_in);
         return hash;
     }
 }
