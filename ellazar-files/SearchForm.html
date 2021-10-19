@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home page</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link type="text/css" rel="stylesheet" href="/Content/bootstrap.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="main.css">
+	<style>
+                .main {
+                    background-color: white;
+					max-width: 100%;
+					overflow-x: hidden;
+                }
+				
+				.p1 {
+					font-family: Arial, Helvetica, sans-serif;
+					font-weight: bold;
+					color: #215275;
+					border-style: none;
+					font-size: 30px;
+				}
+				
+				.p2 {
+					font-family: Arial, Helvetica, sans-serif;
+					font-weight: bold;
+					color: #215275;
+					border-style: none;
+					font-size: 23px;
+				}
+				
+				.p3 {
+					font-family: Arial, Helvetica, sans-serif;
+					font-weight: bold;
+					color: #215275;
+					border-style: none;
+					font-size: 20px;
+					margin-top: -12px;
+				}
+				
+					
+				.btn1 {
+				  background-color: #21618C;
+				  border: none;
+				  color: white;
+				  padding: 10px 16px;
+				  font-size: 16px;
+				  cursor: pointer;
+				}
+
+    </style>
+</head>
+
+<body class ="main">
+					<div class="container-fluid " style="float:left;">
+						<div class="row" style="height:100vh;">
+							<div class="col-sm-2 col-md-2 col-xl-2" style="background-color:#215275; ">
+						   
+						  <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+							  <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+								  <span class="fs-5 d-none d-sm-inline">Menu</span>
+							  </a>
+							  <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+								  <li>
+									  <a href="#candidatesCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+										  <i class="fs-4 bi-person text-white"></i> <span class="ms-1 d-none d-sm-inline text-white">Candidates</span> </a>
+									  <ul class="collapse show nav flex-column ms-1" id="candidatesCollapse" data-bs-parent="#menu">
+										  <li class="ms-4">
+											  <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-people text-white"></i> <span class="d-none d-sm-inline text-white">Show candidates </span></a>
+										  </li>
+										  <li class="ms-4">
+											  <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-person-plus text-white"></i> <span class="d-none d-sm-inline text-white" >Add candidate</span> </a>
+										  </li>
+									  </ul>
+								  </li>
+								  <li>
+									  <a href="#elecperCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+										  <i class="fs-4 bi-calendar-event text-white"></i> <span class="ms-1 d-none d-sm-inline text-white">Elections</span> </a>
+									  <ul class="collapse show nav flex-column ms-1" id="elecperCollapse" data-bs-parent="#menu">
+										  <li class="ms-4">
+											  <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-calendar-range text-white"></i> <span class="d-none d-sm-inline text-white">Show  elections</span> </a>
+										  </li>
+										  <li class="ms-4">
+											  <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-calendar-plus text-white"></i> <span class="d-none d-sm-inline text-white">Add election </span> </a>
+										  </li>
+									  </ul>
+								  </li>
+							  </ul>
+                  <hr>
+							  <div class="dropdown pb-4">
+								  <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+									  <span class="d-none d-sm-inline mx-1">user</span>
+								  </a>
+								  <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+									  <li><a class="dropdown-item" href="#">Sign out</a></li>
+								  </ul>
+							  </div>
+            
+							</div>
+						</div>
+							<div class="col-sm-2 col-md-10 col-xl-10" style="background-color:#E8E8E8; padding:40px;">
+								<div class = "container-fluid header" style="margin-left: -15px;">
+								<p class = "p1"> SEARCH </p>
+								</div>
+								<hr>
+								<br>
+								
+								<div class = "container-fluid d-flex justify-content-center">
+									<form class="d-flex col-sm-4 col-md-12 col-xl-10" >
+										<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+										<button class="btn btn-outline-secondary" type="submit">Search</button>
+
+									<div class="input-group mb-0 col-sm-6 col-md-6 col-xl-4" style="margin-left:30px;">
+									  <input type="text" class="form-control" aria-label="Text input with dropdown button">
+									  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Election</button>
+									  <ul class="dropdown-menu dropdown-menu-end">
+										<li><a class="dropdown-item" href="#">Action</a></li>
+										<li><a class="dropdown-item" href="#">Another action</a></li>
+										<li><a class="dropdown-item" href="#">Something else here</a></li>
+										<li><hr class="dropdown-divider"></li>
+										<li><a class="dropdown-item" href="#">Separated link</a></li>
+									  </ul>
+									</div>
+									</form>
+								</div>
+								
+								<br>
+								
+								<div class="card mb-3 container-fluid d-flex justify-content-center" style="max-width: 1020px; margin-top: 30px;">
+								  <div class="row g-0 " style="padding:10px;">
+									<div class="col-md-2 " style="margin-top: 25px;">
+									  <img src="USER BIG.png" width="150" height="150" style="border-style:solid" class="img-fluid rounded-start" alt="...">
+									</div>
+									<div class="col-md-10" >
+									  <div class="card-body">
+										<form action="/action_page.php">
+										  <label for="LastName"></label>  
+										  <input type="text" class = "p2" id="Name" name="Name" value="NAME" readonly> 
+											
+											<span style="display:inline-block; float: right">
+												<button class="btn1"><i class="fa fa-info"></i></button>
+											</span>
+										  <br><br>
+										 
+										  <label for="Position"></label>  
+										  <input type="text" class = "p3" id="Position" name="Position" value="Position" readonly><br><br>
+										  <label for="Party"></label>  
+										  <input type="text" class = "p3 text-muted" id="Party" name="Party" value="Party" readonly><br><br>
+										</form>
+										
+									  </div>
+									</div>
+								  </div>
+								</div>
+							</div>		
+						</div>
+					</div>
+				<!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
