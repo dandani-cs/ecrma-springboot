@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { ElecperModule } from "../elecper.module";
 import { Elecper } from "../model/elecper";
 
-@Injectable({providedIn:"root"})
+@Injectable({providedIn: null})
 export class Elecperservice {
     elecperServiceURL: string = "";
 

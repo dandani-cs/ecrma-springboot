@@ -5,8 +5,8 @@ import { ElecperModule } from './elecper.module';
 import { ShowElecpersComponent } from './show-elecpers/show-elecpers.component';
 
 const routes: Routes = [
-  { path: '', component: ElecperComponent },
-  { path: 'all', component: ShowElecpersComponent }
+  { path: 'elections/', component: ElecperComponent },
+  { path: 'elections/all', component: ShowElecpersComponent }
 ];
 
 @NgModule({
