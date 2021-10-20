@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { CanActivate } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
-import { LoginComponentComponent } from './login-component/login-component.component';
+import { LoginComponent } from './login-component/login.component';
 
 export const ROUTES: Routes = [
   {
     path: 'login',
-    component: LoginComponentComponent,
+    component: LoginComponent,
   },
   /**
    * Specify pages that require login w/ 'canActivate: [AuthGuard]'

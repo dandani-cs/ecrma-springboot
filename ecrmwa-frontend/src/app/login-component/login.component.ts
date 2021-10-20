@@ -5,11 +5,11 @@ import { User } from '../model/user/user';
 import { AuthService } from '../service/authservice/auth.service';
 
 @Component({
-  selector: 'app-login-component',
-  templateUrl: './login-component.component.html',
-  styleUrls: ['./login-component.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class LoginComponentComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   users: User[] = []
 
