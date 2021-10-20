@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import {HttpClientModule} from '@angular/common/http';
+import { ElecperModule } from './elecper/elecper.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ElecperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

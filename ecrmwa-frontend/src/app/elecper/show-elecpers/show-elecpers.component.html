@@ -1,53 +1,29 @@
-<!-- <app-elecper></app-elecper> -->
-
-<div class="main-content container-fluid col py-3">
-    <div class="row">
-      <div class="col-12 col-sm-9">
-        <h1 class="main-color"> ELECTIONS </h1>
-      </div>
-      <div class="col-12 col-sm-3">
-        <a href="#" class="btn btn-main">Add election <i class="fs-6 bi-plus"></i></a>
-      </div>
-    </div>
-
-    <hr />
-
-    <div class="list-group list-group-flush election-list">
-      <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-        <div class="d-flex w-100 justify-content-between">
-          <h2 class="mb-1 main-color">2016 Presidential Elections</h2>
-          <small>
-            <i class="fs-5 bi bi-archive-fill"></i>
-            <i class="fs-5 bi bi-pencil-fill"></i>
-            <i class="fs-5 bi bi-trash-fill"></i>
-          </small>
+      <div class="main-content container-fluid col py-3">
+        <div class="row">
+          <div class="col-12 col-sm-9">
+            <h1 class="main-color"> ELECTIONS </h1>
+          </div>
+          <div class="col-12 col-sm-3">
+            <a href="#" class="btn btn-main">Add election <i class="fs-6 bi-plus"></i></a>
+          </div>
         </div>
-        <p class="mb-0"><b>2016, May</b></p>
-        <small>Finished</small>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-        <div class="d-flex w-100 justify-content-between">
-          <h2 class="mb-1 main-color">2016 Presidential Elections</h2>
-          <small>
-            <i class="fs-5 bi bi-info-circle-fill"></i>
-            <i class="fs-5 bi bi-pencil-fill"></i>
-            <i class="fs-5 bi bi-trash-fill"></i>
-          </small>
-        </div>
-        <p class="mb-0"><b>2016, May</b></p>
-        <small>Finished</small>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-        <div class="d-flex w-100 justify-content-between">
-          <h2 class="mb-1 main-color">2016 Presidential Elections</h2>
-          <small>
-            <i class="fs-5 bi bi-archive-fill"></i>
-            <i class="fs-5 bi bi-pencil-fill"></i>
-            <i class="fs-5 bi bi-trash-fill"></i>
-          </small>
-        </div>
-        <p class="mb-0"><b>2016, May</b></p>
-        <small>Finished</small>
-      </a>
-    </div>
-  </div> <!--main-content -->
+
+        <hr />
+
+        <div class="list-group list-group-flush election-list">
+          <a *ngFor="let election of elections" href="#" class="list-group-item list-group-item-action" aria-current="true">
+            <div class="d-flex w-100 justify-content-between">
+              <h2 class="mb-1 main-color"> {{ election.name }}</h2>
+              <small>
+                <i class="fs-5 bi bi-archive-fill"></i>
+                <i class="fs-5 bi bi-pencil-fill"></i>
+                <i class="fs-5 bi bi-trash-fill"></i>
+              </small>
+            </div>
+            <p class="mb-0"><b>{{ election.fdate}}</b></p>
+            <small *ngIf="election.archived; else activeArchived">Archived</small>
+            <ng-template #activeArchived>Active</ng-template>
+          </a>
+        </div> <!--list group -->
+      </div> <!--main-content -->
+    
