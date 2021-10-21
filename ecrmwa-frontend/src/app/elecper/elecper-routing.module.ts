@@ -5,7 +5,7 @@ import { ElecperModule } from './elecper.module';
 import { ShowElecpersComponent } from './show-elecpers/show-elecpers.component';
 
 const routes: Routes = [
-  { path: 'elections/', component: ElecperComponent },
+  { path: "", redirectTo: "/elections/all", pathMatch: "full"},
   { path: 'elections/all', component: ShowElecpersComponent }
 ];
 
