@@ -1,0 +1,50 @@
+body {
+  background-color: #E8E8E8;
+}
+
+.bg-dark {
+  background-color: #215275 !important;
+}
+
+.btn-main {
+  background-color: #215275;
+}
+
+.card-title, .main-color {
+  color: #215275;
+  font-weight: bold;
+}
+
+.card i:hover, .election-list i:hover {
+  color: #215275;
+}
+
+.election-list a{
+  color: #495057 !important;
+}
+
+.list-group-item {
+  margin-bottom: 1.5rem;
+  padding: 30px;
+  border-left: 10px solid #215275 !important;
+}
+
+.main-content {
+  margin: 50px;
+}
+
+.navbar-vertical a {
+  color: white;
+}
+
+.add-elec-con{
+  margin-top: 5%;
+  background-color: white;
+  padding: 40px 40px 50px 40px;
+}
+
+.add-elec-btn{
+  margin-top: 5%;
+  text-align: center;
+  float: right;
+}
