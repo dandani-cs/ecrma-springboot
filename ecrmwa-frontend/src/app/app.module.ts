@@ -10,12 +10,14 @@ import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ElecperModule } from './elecper/elecper.module';
 import { CandidatesModule } from './candidates/candidates.module';
+import { SearchCandidatesComponent } from './candidates/search-candidates/search-candidates.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SearchCandidatesComponent
   ],
   imports: [
     BrowserModule,
