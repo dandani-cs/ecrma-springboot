@@ -2,7 +2,7 @@ package com.example.ecrmwabackend.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
+import java.util.Objects;
 
 //AUTOMATICALLY CREATED TABLE DEETS
 /*
@@ -29,19 +29,15 @@ public class Elecper {
     LocalDate fdate;
     boolean archived;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "elecper", orphanRemoval = true)
-    private List<Campaigns> campaigns;
-
     public Elecper() {
     }
 
-    public Elecper(Long elecper_id, String name, LocalDate sdate, LocalDate fdate, boolean archived, List<Campaigns> campaigns) {
+    public Elecper(Long elecper_id, String name, LocalDate sdate, LocalDate fdate, boolean archived) {
         this.elecper_id = elecper_id;
         this.name = name;
         this.sdate = sdate;
         this.fdate = fdate;
         this.archived = archived;
-        this.campaigns = campaigns;
     }
 
     public Long getElecper_id() {
@@ -84,27 +80,53 @@ public class Elecper {
         this.archived = archived;
     }
 
-    public List<Campaigns> getCampaigns() {
-        return campaigns;
-    }
-
-    public void setCampaigns(List<Campaigns> campaigns) {
-        this.campaigns = campaigns;
-    }
-
-
     @Override
     public int hashCode() {
-        return super.hashCode();
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.elecper_id);
+        hash = 79 * hash + Objects.hashCode(this.name);
+        hash = 79 * hash + Objects.hashCode(this.sdate);
+        hash = 79 * hash + Objects.hashCode(this.fdate);
+        hash = 79 * hash + Objects.hashCode(this.archived);
+        return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Elecper other = (Elecper) obj;
+        if (!Objects.equals(this.archived, other.archived)) {
+            return false;
+        }
+        if (!Objects.equals(this.fdate, other.fdate)) {
+            return false;
+        }
+        if (!Objects.equals(this.sdate, other.sdate)) {
+            return false;
+        }
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        return Objects.equals(this.elecper_id, other.elecper_id);
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        final StringBuilder sb = new StringBuilder("Elecper{");
+        sb.append("elecper_id=").append(elecper_id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", sdate='").append(sdate).append('\'');
+        sb.append(", fdate='").append(fdate).append('\'');
+        sb.append(", archived='").append(archived).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

@@ -4,6 +4,7 @@ import { CanActivate } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 import { LoginComponent } from './login-component/login.component';
+import { HomeComponent } from './home/home.component';
 
 export const ROUTES: Routes = [
   {
@@ -34,7 +35,11 @@ export const ROUTES: Routes = [
     canActivate: [AuthGuard],
     data: { expectedRole: 'any' }
   },
+  
+  {path: '',redirectTo: '/index', pathMatch: 'full'},
+  {path: 'index', component: HomeComponent}
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(ROUTES)],
