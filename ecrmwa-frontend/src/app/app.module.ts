@@ -10,6 +10,7 @@ import { LoginComponent } from './login-component/login.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ElecperModule } from './elecper/elecper.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ElecperModule,
     FormsModule
   ],
   providers: [],

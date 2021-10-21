@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { RouterModule, Routes } from '@angular/router';
 import { CanActivate } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -38,11 +39,15 @@ export const ROUTES: Routes = [
   
   {path: '',redirectTo: '/index', pathMatch: 'full'},
   {path: 'index', component: HomeComponent}
+  
+  { path: 'elections', loadChildren: () => import('./elecper/elecper.module').then(m => m.ElecperModule) }
 ];
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(ROUTES)],
+  imports: [RouterModule.forRoot(ROUTES,
+           { preloadingStrategy: PreloadAllModules }
+   )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
