@@ -39,7 +39,8 @@ export const ROUTES: Routes = [
   {path: '',redirectTo: '/index', pathMatch: 'full'},
   {path: 'index', component: HomeComponent},
   
-  { path: 'elections', loadChildren: () => import('./elecper/elecper.module').then(m => m.ElecperModule) }
+  { path: 'elections', loadChildren: () => import('./elecper/elecper.module').then(m => m.ElecperModule) },
+  { path: 'candidates', loadChildren: () => import('./candidates/candidates.module').then(m => m.CandidatesModule) }
 ];
 
 

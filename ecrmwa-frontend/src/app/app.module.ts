@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ElecperModule } from './elecper/elecper.module';
+import { CandidatesModule } from './candidates/candidates.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ElecperModule } from './elecper/elecper.module';
     AppRoutingModule,
     HttpClientModule,
     ElecperModule,
-    FormsModule
+    FormsModule,
+    CandidatesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
