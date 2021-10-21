@@ -1,0 +1,141 @@
+<title>Test</title>
+
+<div class="container-fluid navbar-vertical">
+    <div class="row "  >
+      <div class="col-sm-2 col-md-2 col-xl-2" style="background-color:#215275; ">
+         
+        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <span class="fs-5 d-none d-sm-inline">Menu</span>
+            </a>
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                <li>
+                    <a href="#candidatesCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                        <i class="fs-4 bi-person text-white"></i> <span class="ms-1 d-none d-sm-inline text-white">Candidates</span> </a>
+                    <ul class="collapse show nav flex-column ms-1" id="candidatesCollapse" data-bs-parent="#menu">
+                        <li class="ms-4">
+                            <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-people text-white"></i> <span class="d-none d-sm-inline text-white">Show candidates </span></a>
+                        </li>
+                        <li class="ms-4">
+                            <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-person-plus text-white"></i> <span class="d-none d-sm-inline text-white" >Add candidate</span> </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#elecperCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                        <i class="fs-4 bi-calendar-event text-white"></i> <span class="ms-1 d-none d-sm-inline text-white">Elections</span> </a>
+                    <ul class="collapse show nav flex-column ms-1" id="elecperCollapse" data-bs-parent="#menu">
+                        <li class="ms-4">
+                            <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-calendar-range text-white"></i> <span class="d-none d-sm-inline text-white">Show  elections</span> </a>
+                        </li>
+                        <li class="ms-4">
+                            <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-calendar-plus text-white"></i> <span class="d-none d-sm-inline text-white">Add election </span> </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+<hr>
+            <div class="dropdown pb-4">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="d-none d-sm-inline mx-1">user</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+
+          </div>
+      </div>
+      <div class="col-sm-2 col-md-6  col-lg-10 col-xl-10" style="background-color:#E8E8E8; padding:40px;">
+          <div class = "container-fluid header" style="margin-left: -15px;">
+              <p class = "p6"> Candidate Information </p>
+          </div>
+          <hr>
+          <br>
+      <div class = "container col-sm-3 col-md-10  col-lg-10  col-xl-11 " style="background-color: #fff; padding:40px;">
+        <img src="USER BIG.png" width="150" height="150" style="border-style:solid"/>
+              <div class="container group">
+                  <form action="/action_page.php">
+                    <label for="LastName"></label>  
+                    <input type="text" class = "p2" id="LastName" name="LastName" value="LAST NAME" readonly><br><br>
+                    <label for="FirstName"></label>  
+                    <input type="text" class = "p1" id="FirstName" name="FirstName" value="FIRST NAME" readonly><br><br>
+                  </form>
+                  <div class="d-grid gap-2 d-md-block">
+                    <button class="btn btn-primary bbutton" type="button">EDIT</button>
+                    <button class="btn btn-primary bbutton" type="button">DELETE</button>
+                  </div>
+              </div>
+              
+              
+              <div class="container group1" style="display: inline-block;">
+                  <p class = "p3"> Personal Information </p>
+              </div>
+                  
+              <hr>
+
+              <div class="container col-sm-10 col-md-10 col-lg-10 col-xl-10" >
+                  <div class="input-group mb-3 ">
+                    <input type="text" class="form-control personal" placeholder="Birthdate" aria-label="Birthdate" readonly> &nbsp; &nbsp;
+                    <input type="text" class="form-control personal" placeholder="Sex" aria-label="Sex" readonly> &nbsp; &nbsp;
+                    <input type="text" class="form-control personal" placeholder="Religion" aria-label="Religion" readonly>
+                  </div>
+                  <div class="container" >
+                    <div class="row">
+                      <div class="col">
+                        <p class = "p4" > Birthdate </p>
+                      </div>
+                      <div class="col">
+                        <p class = "p4" > Sex </p>
+                      </div>
+                      <div class="col">
+                        <p class = "p4"> &nbsp; Religion </p>
+                      </div>
+                    </div>
+                  </div>						
+              </div>
+              
+              <div class="container group1">
+                  <p class = "p5"> Educational Background </p>
+              </div>
+                  
+              <hr>
+              
+              <div class="container col-sm-10 col-md-10 col-xl-10">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control personal" placeholder="Course" aria-label="Course" readonly> &nbsp; &nbsp;
+                    <input type="text" class="form-control personal" placeholder="Date" aria-label="Date" readonly>
+                  </div>
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control p4" placeholder="University" aria-label="University" readonly>
+                  </div>						
+              </div>
+              
+              <div class="container group1">
+                  <p class = "p5"> Campaigns </p>
+              </div>
+                  
+              <hr>
+              
+              <div class="container-fluid card" style="padding-top:20px;">
+                  <form action="/action_page.php">
+                    <label for="Position"></label>  
+                    <input type="text" class = "p9" id="Position" name="Position" value="Position" readonly>
+                          <span style="display:inline-block; float: right">
+                              <button class="btn1"><i class="fa fa-edit"></i></button>
+                              <button class="btn1"><i class="fa fa-trash"></i></button>
+                          </span>
+                    <br><br>
+                    
+                    <label for="Party"></label>  
+                     <input type="text" class = "p8 text-muted" id="Party" name="Party" value="Party" readonly><br><br>
+                     <textarea class="form-control" rows="3" placeholder="Platform" readonly></textarea><br><br>
+                  </form>
+              </div>
+      </div>
+      </div>
+    </div>
+
+  </div>
+
+
