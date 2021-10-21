@@ -6,11 +6,11 @@ import { Candidate } from '../model/candidate';
 @Injectable({
   providedIn: 'root'
 })
-export class CandidateServiceService {
+export class CandidateService {
   apiURL: string;
   
   constructor(private http: HttpClient) {
-    this.apiURL = "/api/";
+    this.apiURL = "http://localhost:18080/api/";
   }
 
   public getCandidates(): Observable<Candidate[]> {
