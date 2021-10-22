@@ -49,8 +49,9 @@ export class HomeComponent implements OnInit {
 
           window.alert("[ECRMA] Login Successful!");
           if(user.is_admin == true) {
-            window.alert("[ECRMA] Login Successful2!");
             this.router.navigate(['/candidates'])
+          } else {
+            this.router.navigate(['/search'])
           }
         }
       }
