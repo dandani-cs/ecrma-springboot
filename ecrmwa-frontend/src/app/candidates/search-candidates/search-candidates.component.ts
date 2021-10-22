@@ -9,6 +9,7 @@ import { CandidateService } from '../service/candidate-service.service';
 })
 export class SearchCandidatesComponent implements OnInit {
   candidates: Candidate[] = [];
+  results:    Candidate[] = [];
 
   constructor(private candidateService: CandidateService) { }
 
@@ -16,28 +17,33 @@ export class SearchCandidatesComponent implements OnInit {
     this.getCandidates();
   }
 
-  getCandidates(): void {
+  private getCandidates(): void {
     this.candidateService.getCandidates().subscribe(
-      (data: Candidate[]) => (this.candidates = data)
+      (data: Candidate[]) => { 
+        this.candidates = data
+        this.results = data;
+      }
     );
   }
 
-  searchCandidates(key: string): void {
-    const results: Candidate[] = [];
-
+  public searchCandidates(key: string): void {
+    this.results = []
     // TODO: maybe add multiple search filters (name, party, position)
     for(const candidate of this.candidates) {
-      if(candidate.first_name.toLowerCase().indexOf(key) != -1 ||
-         candidate.last_name.toLowerCase().indexOf(key)  != -1)
-      {
-        results.push(candidate);
-      }
+      const c_fname: string  = candidate.first_name.toLowerCase()
+      const c_lname: string  = candidate.last_name.toLowerCase()
+
+      const is_fname_match: boolean = c_fname.indexOf(key.toLowerCase()) != -1
+      const is_lname_match: boolean = c_lname.indexOf(key.toLowerCase()) != -1
+      const is_fulln_match: boolean = (c_fname + ' ' + c_lname).indexOf(key.toLowerCase()) != -1 || 
+                                      (c_lname + ' ' + c_fname).indexOf(key.toLowerCase()) != -1;
+
+      const is_match: boolean = is_fname_match || is_lname_match || is_fulln_match;
+      if(is_match)
+        this.results.push(candidate);
     }
-
-    this.candidates = results;
-
     if(!key)
-      this.getCandidates();
+      this.results = this.candidates;
   }
 
 
