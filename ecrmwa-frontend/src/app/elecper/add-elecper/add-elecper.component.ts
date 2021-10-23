@@ -25,7 +25,7 @@ export class AddElecperComponent implements OnInit {
       (response) => console.log(response),
       (error) => console.log(error)
     );
-    this.router.navigate(['/elections/all'])
+    this.router.navigate(['/elections/all']);
   }
 
 }
