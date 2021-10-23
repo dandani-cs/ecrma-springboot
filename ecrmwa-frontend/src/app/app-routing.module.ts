@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 import { LoginComponent } from './login-component/login.component';
 import { HomeComponent } from './home/home.component';
+import { SearchCandidatesComponent } from './candidates/search-candidates/search-candidates.component';
 
 export const ROUTES: Routes = [
   {
@@ -40,7 +41,8 @@ export const ROUTES: Routes = [
   {path: 'index', component: HomeComponent},
   
   { path: 'elections', loadChildren: () => import('./elecper/elecper.module').then(m => m.ElecperModule) },
-  { path: 'candidates', loadChildren: () => import('./candidates/candidates.module').then(m => m.CandidatesModule) }
+  { path: 'candidates', loadChildren: () => import('./candidates/candidates.module').then(m => m.CandidatesModule) },
+  { path: 'candidates/search', component: SearchCandidatesComponent, data: { expectedRole: 'any' }}
 ];
 
 
