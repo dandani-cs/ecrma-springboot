@@ -14,6 +14,14 @@ export class ShowElecpersComponent implements OnInit {
 
   ngOnInit(): void {
     this.elecperService.getElecpers().subscribe((data: Elecper[]) => (this.elections = data));
+    window.alert("Deleted");
   }
-
+  onClickDelete(id: number) {
+    console.log("election name: " + id);
+    this.elecperService.deleteElecper(id).subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error)
+    );
+    window.location.reload();
+  }
 }
