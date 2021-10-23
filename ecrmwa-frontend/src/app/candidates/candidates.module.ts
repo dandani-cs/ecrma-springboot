@@ -5,17 +5,21 @@ import { CandidatesRoutingModule } from './candidates-routing.module';
 import { CandidatesComponent } from './candidates.component';
 import { ShowCandidatesComponent } from './show-candidates/show-candidates.component';
 import { ShowCandidateDetailsComponent } from './show-candidate-details/show-candidate-details.component';
+import { SearchCandidatesByPositionComponent } from './search-candidates-by-position/search-candidates-by-position.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     CandidatesComponent,
     ShowCandidatesComponent,
-    ShowCandidateDetailsComponent
+    ShowCandidateDetailsComponent,
+    SearchCandidatesByPositionComponent
   ],
   imports: [
     CommonModule,
-    CandidatesRoutingModule
+    CandidatesRoutingModule,
+    FormsModule
   ]
 })
 export class CandidatesModule { }
