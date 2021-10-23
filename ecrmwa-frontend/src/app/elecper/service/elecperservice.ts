@@ -12,7 +12,21 @@ export class Elecperservice {
         this.elecperServiceURL = "http://localhost:18080/ElecperTester/";
     }
 
-    public getElecpers(): Observable<Elecper[]> {
-        return this.http.get<Elecper[]>(this.elecperServiceURL + "getElecpers")
+    public getElecper(id: number): Observable<Elecper> {
+        return this.http.get<Elecper>(this.elecperServiceURL + "getElecper/" + id);
     }
+
+    public getElecpers(): Observable<Elecper[]> {
+        return this.http.get<Elecper[]>(this.elecperServiceURL + "getElecpers");
+    }
+
+    public addElecper(json: any): Observable<any> {
+        return this.http.post(this.elecperServiceURL + "addElecper", json);
+    }
+
+    public editElecper(id: number, json: any): Observable<any> {
+        return this.http.put(this.elecperServiceURL + "updateElecper/" + id, json);
+    }
+
+
 }
