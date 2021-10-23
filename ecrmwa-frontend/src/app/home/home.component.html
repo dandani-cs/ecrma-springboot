@@ -103,18 +103,18 @@
           <!--heading-------->
           <strong>Sign In</strong>
       <!--form------------------------>
-          <form>
+          <form #loginForm = "ngForm" (ngSubmit) = "onLoginUser(loginForm)">
               <!--email---->
               <label>Email<samp>*</samp></label>
               <div class="email">
                   <i class="far fa-paper-plane"></i>
-                  <input type="email" name="email" required>
+                  <input type="email" ngModel name = "email" name="email" required>
               </div>
               <!--password---->
               <label>Password<samp>*</samp></label>
               <div class="password">
                   <i class="fas fa-lock"></i>
-                  <input type="password" name="password" required>
+                  <input type="password" ngModel name = "password" name="password" required>
               </div>
               <!--login-btn-->
               <input type="submit" name="login" class="login" value="Login">
