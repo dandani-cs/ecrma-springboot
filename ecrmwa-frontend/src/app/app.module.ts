@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login-component/login.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ElecperModule } from './elecper/elecper.module';
 import { CandidatesModule } from './candidates/candidates.module';
 

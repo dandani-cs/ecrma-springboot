@@ -15,4 +15,8 @@ export class Elecperservice {
     public getElecpers(): Observable<Elecper[]> {
         return this.http.get<Elecper[]>(this.elecperServiceURL + "getElecpers")
     }
+
+    public addElecper(json: any): Observable<any> {
+        return this.http.post(this.elecperServiceURL + "addElecper", json); 
+    }
 }
