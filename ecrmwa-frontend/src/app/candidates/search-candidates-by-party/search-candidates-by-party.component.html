@@ -70,16 +70,18 @@
             <br>
 
             <div class="row d-flex justify-content-center">
-                <div *ngFor="let candidate of results" class="card col-12 ms-2 me-2 mb-3" >
+                <div *ngFor="let campaign of results" class="card col-12 ms-2 me-2 mb-3" >
                     <div class="row">
                       <div class="col-md-2" style="padding:0px;">
-                        <img src="assets/candidates/{{candidate.image_path}}" class="img-fluid rounded-start" alt="...">
+                        <img src="assets/candidates/{{campaign.candidate.image_path}}" class="img-fluid rounded-start" alt="...">
                       </div>
                       <div class="col-md-10 d-flex align-items-stretch" style="padding:0px;">
                         <div class="card-body">
-                          <h5 class="card-title">{{candidate.last_name | uppercase }}, {{candidate.first_name | titlecase}} {{candidate.middle_initial}}. </h5>
-                          <p class="card-text"><b class="main-color">Party:</b></p>
-                          <p class="card-text"><small class="text-muted"></small></p>
+                          <h5 class="card-title">{{campaign.candidate.last_name | uppercase }}, {{campaign.candidate.first_name | titlecase}} {{campaign.candidate.middle_initial}}. </h5>
+                          <p class="card-text"><b class="main-color">Platform:</b> {{campaign.platform}}</p>
+                          <ul class="list-group list-group-flush">
+                              <li class="list-group-item"><b class="main-color">Party: </b>{{campaign.party}}</li>
+                          </ul>
                         </div>
                         <div class="card-footer text-muted">
                           <i class="fs-5 bi bi-info-circle-fill"></i><br>
