@@ -16,4 +16,20 @@ export class CandidateService {
   public getCandidates(): Observable<Candidate[]> {
     return this.http.get<Candidate[]>(this.apiURL + "candidates");
   }
+
+  public getCandidate(id: number): Observable<Candidate> {
+    return this.http.get<Candidate>(this.apiURL + "get-candidate/" + id);
+}
+
+  public addCandidate(json: any): Observable<any> {
+    return this.http.post(this.apiURL + "add-candidate", json);
+  }
+
+  public deleteCandidate(id: number): Observable<any> {
+    return this.http.delete(this.apiURL + "delete-candidate/" + id);
+  }
+
+  public editCandidate(id: number, json: any): Observable<any> {
+    return this.http.put(this.apiURL + "edit-candidate/" + id, json);
+  }
 }

@@ -1,0 +1,140 @@
+body {
+    background-color: white;
+    max-width: 100%;
+    overflow-x:hidden;   
+     
+}
+
+#ngimg:hover {
+    cursor:pointer;
+}
+
+.p1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    margin-top: -5px;
+    width: 250px;
+    overflow-x: hidden;
+}
+
+.p2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #215275;
+    font-size: 25px;
+    margin-bottom: -5px;
+    width: 300px;
+    overflow-x: hidden;
+}
+
+.p3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #215275;
+    border: none;
+    font-size: 17px;
+    margin-top: 50px;
+    margin-left: -75px;
+}
+
+.p4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #215275;
+    border-style: none;
+    font-size: 17px;
+    margin-top: -10px;
+    text-align: left;
+}
+
+.p5 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #215275;
+    border: none;
+    font-size: 17px;
+    margin-top: 20px;
+    margin-left: -75px;
+}
+
+.p6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #215275;
+    border-style: none;
+    font-size: 30px;
+}
+
+.p7 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: plain;
+    color: #215275;
+    border-style: none;
+    font-size: 20px;
+    margin-top: -5px;
+}
+
+.p8 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #215275;
+    border-style: none;
+    font-size: 17px;
+    margin-top: -20px;
+}
+
+.p9 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #215275;
+    border-style: none;
+    font-size: 17px;
+}
+
+.group {
+    margin-top: -143px;
+    margin-left: 200px;
+}
+
+.group1 {
+    margin-top: 0px;
+    margin-left: 60px;
+}
+
+.bbutton {
+    color: white;
+    border: none;
+    font-weight: bold;
+    margin-top: -20px;
+    margin-left: 6px;
+    background-color: #215275;
+}
+
+.bbutton1 {
+    color: white;
+    border: none;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-left: 6px;
+    background-color: #215275;
+}
+
+
+.personal {
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: plain;
+    color: black;
+    font-size: 18px;
+}
+
+.btn1 {
+  
+  border: none;
+  color: #21618C;
+  background-color: white;
+  font-size: 25px;
+  cursor: pointer;
+}

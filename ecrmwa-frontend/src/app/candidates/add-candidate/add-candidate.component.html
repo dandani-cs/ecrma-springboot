@@ -1,0 +1,111 @@
+<div class = "body">
+   <div class="container-fluid navbar-vertical">
+      <div class="row "  >
+         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+               <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+               <span class="fs-5 d-none d-sm-inline">Menu</span>
+               </a>
+               <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                  <li>
+                     <a href="#candidatesCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                     <i class="fs-4 bi-person"></i> <span class="ms-1 d-none d-sm-inline">Candidates</span> </a>
+                     <ul class="collapse show nav flex-column ms-1" id="candidatesCollapse" data-bs-parent="#menu">
+                        <li class="ms-4">
+                           <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-people"></i> <span class="d-none d-sm-inline">Show candidates </span></a>
+                        </li>
+                        <li class="ms-4">
+                           <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-person-plus"></i> <span class="d-none d-sm-inline">Add candidate</span> </a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a href="#elecperCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                     <i class="fs-4 bi-calendar-event"></i> <span class="ms-1 d-none d-sm-inline">Elections</span> </a>
+                     <ul class="collapse show nav flex-column ms-1" id="elecperCollapse" data-bs-parent="#menu">
+                        <li class="ms-4">
+                           <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-calendar-range"></i> <span class="d-none d-sm-inline">Show  elections</span> </a>
+                        </li>
+                        <li class="ms-4">
+                           <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-calendar-plus"></i> <span class="d-none d-sm-inline">Add election </span> </a>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+               <hr>
+               <div class="dropdown pb-4">
+                  <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="d-none d-sm-inline mx-1">user</span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                     <li><a class="dropdown-item" href="#">Sign out</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-2 col-md-6  col-lg-10 col-xl-10" style="background-color:#E8E8E8; padding:40px;">
+            <div class = "container-fluid header" style="margin-left: -15px;">
+               <p class = "p6"> Candidate Information </p>
+            </div>
+            <hr>
+            <br>
+            <div class = "container col-sm-3 col-md-10  col-lg-10  col-xl-11 " style="background-color: #fff; padding:40px; overflow-x: hidden;">
+               <form #addCandidate="ngForm" (ngSubmit)="onSubmit(addCandidate)">
+               <img src = "assets/candidates/USER BIG.png" id = "ngimg" width="150" height="150" style="border-style:solid;"
+                  onclick="document.getElementById('imgfile').click();"/>
+               <input type="file" id="imgfile" name="imgfile" accept="image/*" onchange="imgFunc1();" style = "display: none;">
+               <div class="container group">
+                  <input type="text" class = "form-control personal p2" id="last_name" name="last_name" placeholder="LAST NAME" ngModel required><br>
+                  <input type="text" class = "form-control personal p1" id="middle_initial" name="middle_initial" placeholder="M.I." maxlength="1" ngModel required><br>
+                  <input type="text" class = "form-control personal p1" id="first_name" name="first_name" placeholder="FIRST NAME" ngModel required><br>
+                  <div class="d-grid gap-2 d-md-block">                        
+                  </div>
+               </div>
+               <div class="container group1" style="display: inline-block;">
+                  <p class = "p3"> Personal Information </p>
+               </div>
+               <hr>
+               <div class="container col-sm-10 col-md-10 col-lg-10 col-xl-10" >
+                  <div class="input-group mb-3 ">
+                     <input type="date" class="form-control personal" placeholder="Birthdate" name = "birth_date" aria-label="Birthdate" ngModel> &nbsp; &nbsp;
+                     <input type="text" class="form-control personal" name="sex" placeholder="Sex" aria-label="Sex" ngModel> &nbsp; &nbsp;
+                     <input type="text" class="form-control personal" name="religion" placeholder="Religion" aria-label="Religion" ngModel>
+                  </div>
+                  <div class="container" >
+                     <div class="row">
+                        <div class="col">
+                           <p class = "p4" > Birthdate </p>
+                        </div>
+                        <div class="col">
+                           <p class = "p4" > Sex </p>
+                        </div>
+                        <div class="col">
+                           <p class = "p4"> &nbsp; Religion </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="container group1">
+                  <p class = "p5"> Educational Background </p>
+               </div>
+               <hr>
+               <div class="container col-sm-10 col-md-10 col-xl-10">
+                  <div class="input-group mb-3">
+                     <input type="text" class="form-control personal" name="degree" placeholder="Course" aria-label="Course" ngModel> &nbsp; &nbsp;
+                     <input type="date" class="form-control personal" name="grad_date" placeholder="Date" aria-label="Date" ngModel>
+                  </div>
+                  <div class="input-group mb-3">
+                     <input type="text" class="form-control p4" name="university" placeholder="University" aria-label="University" ngModel>
+                  </div>
+               </div>
+               <br>
+               <div class = "container group1" style = "margin-left: 0px;">
+                  <button class="btn btn-primary bbutton" type="submit">SUBMIT</button>
+                  <button class="btn btn-primary bbutton" type="reset">RESET</button>
+               </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

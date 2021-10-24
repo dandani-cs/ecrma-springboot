@@ -29,6 +29,6 @@ public class CandidateController {
     @RequestMapping(value = "/api/update-candidate", method = RequestMethod.POST)
     public Candidate updateCandidate(@RequestBody Candidate candidate) { return service.updateCandidate(candidate); }
 
-    @RequestMapping(value = "/api/delete-candidate/{id}")
+    @RequestMapping(value = "/api/delete-candidate/{id}", method = RequestMethod.DELETE)
     public void deleteCandidate(@PathVariable long id) { service.deleteCandidate(service.getCandidate(id)); }
 }

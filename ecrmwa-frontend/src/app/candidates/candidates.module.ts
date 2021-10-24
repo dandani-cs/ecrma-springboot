@@ -5,17 +5,23 @@ import { CandidatesRoutingModule } from './candidates-routing.module';
 import { CandidatesComponent } from './candidates.component';
 import { ShowCandidatesComponent } from './show-candidates/show-candidates.component';
 import { ShowCandidateDetailsComponent } from './show-candidate-details/show-candidate-details.component';
+import { AddCandidateComponent } from './add-candidate/add-candidate.component';
+import { FormsModule } from '@angular/forms';
+import { EditCandidateComponent } from './edit-candidate/edit-candidate.component';
 
 
 @NgModule({
   declarations: [
     CandidatesComponent,
     ShowCandidatesComponent,
-    ShowCandidateDetailsComponent
+    ShowCandidateDetailsComponent,
+    AddCandidateComponent,
+    EditCandidateComponent
   ],
   imports: [
     CommonModule,
-    CandidatesRoutingModule
+    CandidatesRoutingModule,
+    FormsModule,
   ]
 })
 export class CandidatesModule { }
