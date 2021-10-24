@@ -13,4 +13,5 @@ public interface ICampaignsService {
     void deleteCampaign(Long campaign_id);
     List<String> getPartiesOfElecper(Long elecper_id);
     List<String> getPositionsOfElecper(Long elecper_id);
+    List<Campaigns> getCampaignsPerId(Long id);
 }

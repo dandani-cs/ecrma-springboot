@@ -16,11 +16,13 @@ import { SearchCandidatesByPartyComponent } from './search-candidates-by-party/s
 const routes: Routes = [
   { path: "", redirectTo: "/candidates/show-candidates", pathMatch: "full"},
   
-  { path: 'candidates/show-candidates', 
-    component: ShowCandidatesComponent
+  { path: 'candidates/all', 
+    component: ShowCandidatesComponent, 
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'any'}
   },
   
-  { path: 'candidates/show-candidate-details', 
+  { path: 'candidates/show/:id', 
     component: ShowCandidateDetailsComponent,
     canActivate: [AuthGuard],
     data: {expectedRole: 'any'}
@@ -36,7 +38,6 @@ const routes: Routes = [
   canActivate: [AuthGuard],
   data: {expectedRole: 'admin'}
   },
-
 
   { 
     path: 'candidates/search-name', 

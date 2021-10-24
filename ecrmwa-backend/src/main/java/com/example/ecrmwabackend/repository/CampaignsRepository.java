@@ -17,4 +17,7 @@ public interface CampaignsRepository extends CrudRepository <Campaigns, Long> {
 
     @Query(value = "select distinct Position from Campaigns where elecper_id = ?1", nativeQuery = true)
     List<String> getPositionsOfElecper(Long elecper_id);
+
+    @Query(value = "select * from Campaigns where id= ?1", nativeQuery = true)
+    List<Campaigns> getCampaignsPerId(Long id);
 }
