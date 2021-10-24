@@ -21,4 +21,8 @@ export class CampaignService {
     return this.http.get<string[]>(this.apiURL + '/getPositionsOfElecper/' + id)
   }
 
+  public getPartiesOfElecPer(id: number): Observable<string[]> {
+    return this.http.get<string[]>(this.apiURL + "getPartiesOfElecper/" + id);
+  }
+
 }

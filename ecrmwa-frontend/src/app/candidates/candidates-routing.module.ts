@@ -10,15 +10,14 @@ import { EditCandidateComponent } from './edit-candidate/edit-candidate.componen
 
 import { SearchCandidatesComponent } from './search-candidates/search-candidates.component';
 import { SearchCandidatesByPositionComponent } from './search-candidates-by-position/search-candidates-by-position.component';
+import { SearchCandidatesByPartyComponent } from './search-candidates-by-party/search-candidates-by-party.component';
 
 
 const routes: Routes = [
   { path: "", redirectTo: "/candidates/show-candidates", pathMatch: "full"},
   
   { path: 'candidates/show-candidates', 
-    component: ShowCandidatesComponent, 
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'any'}
+    component: ShowCandidatesComponent
   },
   
   { path: 'candidates/show-candidate-details', 
@@ -48,6 +47,11 @@ const routes: Routes = [
     path: 'candidates/search-position', 
     component: SearchCandidatesByPositionComponent, 
     data: { expectedRole: 'any' }
+  },
+
+  { path: 'candidates/search-party',
+    component: SearchCandidatesByPartyComponent,
+    data: {expectedRole: 'any'}
   }
 
 ];
