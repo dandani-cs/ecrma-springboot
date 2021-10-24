@@ -10,6 +10,7 @@ import { EditCandidateComponent } from './edit-candidate/edit-candidate.componen
 
 import { SearchCandidatesComponent } from './search-candidates/search-candidates.component';
 import { SearchCandidatesByPositionComponent } from './search-candidates-by-position/search-candidates-by-position.component';
+import { SearchCandidatesByPartyComponent } from './search-candidates-by-party/search-candidates-by-party.component';
 
 
 const routes: Routes = [
@@ -38,7 +39,6 @@ const routes: Routes = [
   data: {expectedRole: 'admin'}
   },
 
-
   { 
     path: 'candidates/search-name', 
     component: SearchCandidatesComponent, 
@@ -48,6 +48,11 @@ const routes: Routes = [
     path: 'candidates/search-position', 
     component: SearchCandidatesByPositionComponent, 
     data: { expectedRole: 'any' }
+  },
+
+  { path: 'candidates/search-party',
+    component: SearchCandidatesByPartyComponent,
+    data: {expectedRole: 'any'}
   }
 
 ];

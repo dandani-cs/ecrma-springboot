@@ -25,4 +25,8 @@ export class CampaignService {
     return this.http.get<Campaign[]>(this.apiURL + '/getCampaignsPerId/' + id);
   }
 
+  public getPartiesOfElecPer(id: number): Observable<string[]> {
+    return this.http.get<string[]>(this.apiURL + "getPartiesOfElecper/" + id);
+  }
+
 }
