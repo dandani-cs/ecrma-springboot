@@ -15,13 +15,13 @@ import { SearchCandidatesByPositionComponent } from './search-candidates-by-posi
 const routes: Routes = [
   { path: "", redirectTo: "/candidates/show-candidates", pathMatch: "full"},
   
-  { path: 'candidates/show-candidates', 
+  { path: 'candidates/all', 
     component: ShowCandidatesComponent, 
     canActivate: [AuthGuard],
     data: { expectedRole: 'any'}
   },
   
-  { path: 'candidates/show-candidate-details', 
+  { path: 'candidates/show/:id', 
     component: ShowCandidateDetailsComponent,
     canActivate: [AuthGuard],
     data: {expectedRole: 'any'}

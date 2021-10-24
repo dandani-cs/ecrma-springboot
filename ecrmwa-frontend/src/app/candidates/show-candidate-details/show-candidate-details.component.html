@@ -51,64 +51,59 @@
           </div>
           <hr>
           <br>
-      <div class = "container col-sm-3 col-md-10  col-lg-10  col-xl-11 " style="background-color: #fff; padding:40px;">
-        <img src="/assets/images/USER BIG.png" width="150" height="150" style="border-style:solid"/>
-              <div class="container group">
-                  <form action="/action_page.php">
-                    <label for="LastName"></label>  
-                    <input type="text" class = "p2" id="LastName" name="LastName" value="LAST NAME" readonly><br><br>
-                    <label for="FirstName"></label>  
-                    <input type="text" class = "p1" id="FirstName" name="FirstName" value="FIRST NAME" readonly><br><br>
-                  </form>
-                  <div class="d-grid gap-2 d-md-block">
-                    <button class="btn btn-primary bbutton" type="button">EDIT</button>
-                    <button class="btn btn-primary bbutton" type="button">DELETE</button>
-                  </div>
-              </div>
-              
-              
-              <div class="container group1" style="display: inline-block;">
-                  <p class = "p3"> Personal Information </p>
-              </div>
-                  
-              <hr>
-
-              <div class="container col-sm-10 col-md-10 col-lg-10 col-xl-10" >
-                  <div class="input-group mb-3 ">
-                    <input type="text" class="form-control personal" placeholder="Birthdate" aria-label="Birthdate" readonly> &nbsp; &nbsp;
-                    <input type="text" class="form-control personal" placeholder="Sex" aria-label="Sex" readonly> &nbsp; &nbsp;
-                    <input type="text" class="form-control personal" placeholder="Religion" aria-label="Religion" readonly>
-                  </div>
-                  <div class="container" >
-                    <div class="row">
-                      <div class="col">
+          <div class = "container col-sm-3 col-md-10  col-lg-10  col-xl-11 " style="background-color: #fff; padding:40px; overflow-x: hidden;">
+            <form >
+            <img src="../../assets/candidates/{{candidate.image_path}}" id="ngimg" width="150" height="150" style="border-style:solid" onclick="document.getElementById('imgfile').click();"/>
+            <input type="file" id="imgfile" name="imgfile" accept="image/*" onchange="imgFunc1();" style = "display: none;">
+            <div class="container group">
+               <input type="text" class = "form-control personal p2" id="last_name" name="last_name" value="{{candidate.last_name}}" ngModel><br>
+               <input type="text" class = "form-control personal p1" id="middle_initial" name="middle_initial" value="{{candidate.middle_initial}}" maxlength="1" ngModel><br>
+               <input type="text" class = "form-control personal p1" id="first_name" name="first_name" value="{{candidate.first_name}}" ngModel><br>
+               <div class="d-grid gap-2 d-md-block">
+               </div>
+            </div>
+              <button class="btn btn-primary bbutton" (click)="onClickEdit(candidate.id)">EDIT</button>
+              <button class="btn btn-primary bbutton" (click)="onClickDelete(candidate.id)">DELETE</button>
+            <div class="container group1" style="display: inline-block;">
+               <p class = "p3"> Personal Information </p>
+            </div>
+            <hr>
+            <div class="container col-sm-10 col-md-10 col-lg-10 col-xl-10" >
+               <div class="input-group mb-3 ">
+                  <input type="date" class="form-control personal" placeholder="Birthdate" name = "birth_date" aria-label="Birthdate" value = "{{candidate.birth_date}}" ngModel> &nbsp; &nbsp;
+                  <input type="text" class="form-control personal" name="sex" placeholder="Sex" aria-label="Sex" value="{{candidate.sex}}" ngModel> &nbsp; &nbsp;
+                  <input type="text" class="form-control personal" name="religion" placeholder="Religion" aria-label="Religion" value="{{candidate.religion}}" ngModel>
+               </div>
+               <div class="container" >
+                  <div class="row">
+                     <div class="col">
                         <p class = "p4" > Birthdate </p>
-                      </div>
-                      <div class="col">
+                     </div>
+                     <div class="col">
                         <p class = "p4" > Sex </p>
-                      </div>
-                      <div class="col">
+                     </div>
+                     <div class="col">
                         <p class = "p4"> &nbsp; Religion </p>
-                      </div>
-                    </div>
-                  </div>						
-              </div>
-              
-              <div class="container group1">
-                  <p class = "p5"> Educational Background </p>
-              </div>
-                  
-              <hr>
-              
-              <div class="container col-sm-10 col-md-10 col-xl-10">
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control personal" placeholder="Course" aria-label="Course" readonly> &nbsp; &nbsp;
-                    <input type="text" class="form-control personal" placeholder="Date" aria-label="Date" readonly>
+                     </div>
                   </div>
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control p4" placeholder="University" aria-label="University" readonly>
-                  </div>						
-              </div>
+               </div>
+            </div>
+            <div class="container group1">
+               <p class = "p5"> Educational Background </p>
+            </div>
+            <hr>
+            <div class="container col-sm-10 col-md-10 col-xl-10">
+               <div class="input-group mb-3">
+                  <input type="text" class="form-control personal" name="degree" placeholder="Course" value="{{candidate.degree}}" aria-label="Course" ngModel> &nbsp; &nbsp;
+                  <input type="date" class="form-control personal" name="grad_date" placeholder="Date" value="{{candidate.grad_date}}" aria-label="Date" ngModel>
+               </div>
+               <div class="input-group mb-3">
+                  <input type="text" class="form-control p4" name="university" placeholder="University" aria-label="University" value = "{{candidate.university}}" ngModel>
+               </div>
+            </div>
+            <br>
+            </form>
+
               
               <div class="container group1">
                   <p class = "p5"> Campaigns </p>
@@ -116,25 +111,17 @@
                   
               <hr>
               
-              <div class="container-fluid card" style="padding-top:20px;">
-                  <form action="/action_page.php">
-                    <label for="Position"></label>  
-                    <input type="text" class = "p9" id="Position" name="Position" value="Position" readonly>
-                          <span style="display:inline-block; float: right">
-                              <button class="btn1"><i class="fa fa-edit"></i></button>
-                              <button class="btn1"><i class="fa fa-trash"></i></button>
-                          </span>
-                    <br><br>
-                    
-                    <label for="Party"></label>  
-                     <input type="text" class = "p8 text-muted" id="Party" name="Party" value="Party" readonly><br><br>
-                     <textarea class="form-control" rows="3" placeholder="Platform" readonly></textarea><br><br>
+              <div *ngFor="let campaign of campaigns" class="container-fluid card" style="padding-top:20px; margin-bottom: 20px">
+                  <form>
+                    <input type="text" class = "p10" id="elecpername" name="elecpername" value="{{campaign.elecper.name | uppercase }}" readonly>
+                    <br>
+                    <input type="text" class = "p9" id="Position" name="Position" value="{{campaign.position}}" readonly>
+                    <br>
+                     <input type="text" class = "p8" id="Party" name="Party" value="{{campaign.party}}" readonly><br>
+                     <textarea class="form-control" rows="3" placeholder="{{campaign.platform}}" readonly></textarea><br><br>
                   </form>
-              </div>
       </div>
       </div>
     </div>
-
   </div>
-
-
+  </div>

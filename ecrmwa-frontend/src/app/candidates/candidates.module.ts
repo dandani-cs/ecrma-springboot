@@ -19,7 +19,7 @@ import { SearchCandidatesByPositionComponent } from './search-candidates-by-posi
     ShowCandidatesComponent,
     ShowCandidateDetailsComponent,
     AddCandidateComponent,
-    EditCandidateComponent
+    EditCandidateComponent,
     SearchCandidatesByPositionComponent
   ],
   imports: [

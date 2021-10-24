@@ -52,4 +52,9 @@ public class CampaignsService implements ICampaignsService {
     public List<String> getPositionsOfElecper(Long elecper_id) {
         return (List<String>) repository.getPositionsOfElecper(elecper_id);
     }
+
+    @Override
+    public List<Campaigns> getCampaignsPerId(Long id) {
+       return (List<Campaigns>) repository.getCampaignsPerId(id);
+    }
 }

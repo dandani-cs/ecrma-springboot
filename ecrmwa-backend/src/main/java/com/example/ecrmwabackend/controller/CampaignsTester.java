@@ -63,4 +63,10 @@ public class CampaignsTester {
     public List<String> getPositionsOfElecper(@PathVariable Long elecper_id) {
         return campaignsService.getPositionsOfElecper(elecper_id);
     }
+
+    @RequestMapping(value = "/CampaignsTester/getCampaignsPerId/{id}")
+    public List<Campaigns> getCampaignsPerId(@PathVariable Long id) {
+        return campaignsService.getCampaignsPerId(id);
+    }
+
 }

@@ -34,13 +34,12 @@ export class EditCandidateComponent implements OnInit {
     }
     editCandidate.value['id'] = this.id;
     console.log(editCandidate.value);
-    window.alert(editCandidate.value);
     this.candidateService.addCandidate(editCandidate.value).subscribe(
       (response) => console.log(response),
       (error) => console.log(error)
     );
 
-    this.router.navigate(['/candidates/show-candidates']).
+    this.router.navigate(['/candidates/all']).
     then(() => {
       window.location.reload()
     });
