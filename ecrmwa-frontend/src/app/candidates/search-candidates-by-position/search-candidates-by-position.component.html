@@ -70,25 +70,26 @@
             <br>
             
             <div class="row d-flex justify-content-center">
-                <div *ngFor="let candidate of results" class="card col-12 col-sm-12 col-xl-5 ms-2 me-2 mb-3" >
+                <div *ngFor="let candidate of results" class="card col-12 ms-2 me-2 mb-3" >
                     <div class="row">
-                      <div class="col-md-4" style="padding:0px;">
+                      <div class="col-md-2" style="padding:0px;">
                         <img src="assets/candidates/{{candidate.image_path}}" class="img-fluid rounded-start" alt="...">
                       </div>
-                      <div class="col-md-8 d-flex align-items-stretch" style="padding:0px;">
+                      <div class="col-md-10 d-flex align-items-stretch" style="padding:0px;">
                         <div class="card-body">
                           <h5 class="card-title">{{candidate.last_name | uppercase }}, {{candidate.first_name | titlecase}} {{candidate.middle_initial}}. </h5>
                           <p class="card-text"><b class="main-color">Platforms:</b> Better healthcare system, provide educational support to the marginalized, address the needs of farmers and fishermen.</p>
                           <p class="card-text"><small class="text-muted"></small></p>
                         </div>
                         <div class="card-footer text-muted">
-                          <i class="fs-5 bi bi-info-circle-fill"></i>
-                          <i class="fs-5 bi bi-pencil-fill"></i>
+                          <i class="fs-5 bi bi-info-circle-fill"></i><br>
+                          <i class="fs-5 bi bi-pencil-fill"></i><br>
                           <i class="fs-5 bi bi-trash-fill"></i>
                         </div> <!-- footer -->
                       </div>
                     </div>
                   </div> <!-- card -->
-        </div>		
+            </div>		
+            
     </div>
 </div>

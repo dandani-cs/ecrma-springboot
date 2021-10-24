@@ -48,6 +48,7 @@ export class SearchCandidatesByPartyComponent implements OnInit {
     this.campaignService.getCampaigns().subscribe(
       (data: Campaign[]) => {
         this.campaigns = data;
+        console.log("getCampaigns");
       }
     )
   }
@@ -81,6 +82,7 @@ export class SearchCandidatesByPartyComponent implements OnInit {
       if(is_match_eperId && is_match_party) 
         this.results.push(campaign.candidate);
     }
+    console.log(this.results);
   }
 
 }
