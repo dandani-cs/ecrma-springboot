@@ -13,7 +13,7 @@ import { CandidateService } from '../service/candidate-service.service';
 })
 export class SearchCandidatesByPositionComponent implements OnInit {
   candidates: Candidate[] = [];
-  results:    Candidate[] = [];
+  results:    Campaign[]  = [];
   campaigns:  Campaign[]  = [];
   elecpers:   Elecper[]   = [];
   positions:  string[]    = [];
@@ -39,7 +39,6 @@ export class SearchCandidatesByPositionComponent implements OnInit {
     this.candidateService.getCandidates().subscribe(
       (data: Candidate[]) => { 
         this.candidates = data
-        this.results = data;
       }
     );
   }
@@ -48,6 +47,7 @@ export class SearchCandidatesByPositionComponent implements OnInit {
     this.campaignService.getCampaigns().subscribe(
       (data: Campaign[]) => {
         this.campaigns = data;
+        this.results   = data;
       }
     )
   }
@@ -76,10 +76,10 @@ export class SearchCandidatesByPositionComponent implements OnInit {
     this.results = [];
     for(const campaign of this.campaigns) {
       const is_match_eperId: boolean   =  campaign.elecper.name === this.elecPerSelect!.value;
-      const is_match_position: boolean =  position === "Any position" || campaign.position === position;
+      const is_match_position: boolean =  position === "Any position" || campaign.position.toLowerCase() === position.toLowerCase();
 
       if(is_match_eperId && is_match_position)
-        this.results.push(campaign.candidate);
+        this.results.push(campaign);
     }
   }
 }
