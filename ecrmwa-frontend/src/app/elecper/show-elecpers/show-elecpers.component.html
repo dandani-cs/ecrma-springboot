@@ -62,7 +62,7 @@
               <small>
                 <a href="#" data-toggle="modal" data-target="#elec-arc-modal"><i class="fs-5 bi bi-archive-fill" style="margin-right: 10px;"></i></a>
                 <i class="fs-5 bi bi-pencil-fill" style="margin-right: 10px;"></i>
-                <a href="#" data-toggle="modal" data-target="#elec-del-modal"><i class="fs-5 bi bi-trash-fill"></i> </a>
+                <a href="#elec-del-modal-{{election.elecper_id}}" data-toggle="modal" data-target="#elec-del-modal-{{election.elecper_id}}"><i class="fs-5 bi bi-trash-fill"></i> </a>
               </small>
             </div>
             <p class="mb-0"><b>{{election.fdate}}</b></p>
@@ -73,10 +73,12 @@
         </div> <!--list group -->
       </div> <!--main-content -->
       <br><br>
+
+    </div> <!-- nav row -->
       <!--delete modal-->
     
-      <div class="modal fade election-list" id="elec-del-modal">
-        <a *ngFor="let election of elections" href="#" aria-current="true" style="text-decoration: none;"> 
+      <a *ngFor="let election of elections"> 
+      <div class="modal fade election-list" id="elec-del-modal-{{election.elecper_id}}">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">  
@@ -99,8 +101,8 @@
                 </div>
             </div>
         </div>
-        </a>
     </div>
+</a>
       <!--archive modal-->
       <div class="modal fade" id="elec-arc-modal">
         <div class="modal-dialog">
@@ -124,5 +126,4 @@
             </div>
         </div>
   </div>
-</div> <!-- nav row -->
 </div> <!-- nav -->   
