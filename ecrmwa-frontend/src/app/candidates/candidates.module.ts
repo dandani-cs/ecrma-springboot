@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { EditCandidateComponent } from './edit-candidate/edit-candidate.component';
 
 import { SearchCandidatesByPositionComponent } from './search-candidates-by-position/search-candidates-by-position.component';
-import { SearchCandidatesByPartyComponent } from './search-candidates-by-party/search-candidates-by-party.component';
 
 
 
@@ -21,8 +20,7 @@ import { SearchCandidatesByPartyComponent } from './search-candidates-by-party/s
     ShowCandidateDetailsComponent,
     AddCandidateComponent,
     EditCandidateComponent,
-    SearchCandidatesByPositionComponent,
-    SearchCandidatesByPartyComponent
+    SearchCandidatesByPositionComponent
   ],
   imports: [
     CommonModule,

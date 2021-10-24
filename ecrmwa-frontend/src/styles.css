@@ -1,5 +1,7 @@
 body {
     background-color: white;
+    max-width: 100%;
+    overflow-x:hidden;
   }
   
   .bg-dark {
@@ -37,3 +39,35 @@ body {
     color: white;
   }
   
+  .checkhack {
+    display: none;
+  }
+  
+  #menuu {
+    display: none;
+  }
+  
+  #menuutoggle:checked + #menuu {
+    display: block;
+  }
+
+  .arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    font-size: 1px;
+  }
+  
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+  .p1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #215275;
+    border-style: none;
+    font-size: 30px;
+  }
