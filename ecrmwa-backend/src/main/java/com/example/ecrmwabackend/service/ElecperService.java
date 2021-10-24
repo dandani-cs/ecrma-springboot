@@ -41,8 +41,9 @@ public class ElecperService implements IElecperService{
     }
 
     @Override
-    public void updateElecperArchive(Long elecper_id, boolean archive) {
-        repository.updateArchive(elecper_id, archive);
+    public void updateElecperArchive(Long elecper_id) {
+        Elecper tmp = getElecper(elecper_id);
+        repository.updateArchive(elecper_id, !tmp.isArchived());
     }
 
     @Override

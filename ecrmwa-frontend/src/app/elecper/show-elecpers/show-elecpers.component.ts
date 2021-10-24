@@ -15,6 +15,7 @@ export class ShowElecpersComponent implements OnInit {
   ngOnInit(): void {
     this.elecperService.getElecpers().subscribe((data: Elecper[]) => (this.elections = data));
   }
+  
   onClickDelete(id: number) {
     console.log("election name: " + id);
     this.elecperService.deleteElecper(id).subscribe(
@@ -22,5 +23,13 @@ export class ShowElecpersComponent implements OnInit {
       (error) => console.log(error)
     );
     window.location.reload();
+  }
+
+  onClickArchive(id: number) {
+    console.log("election name: " + id);
+    this.elecperService.updateElecperArchive(id).subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error)
+    );
   }
 }
