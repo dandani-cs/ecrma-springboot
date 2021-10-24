@@ -6,6 +6,8 @@ import { Elecper } from "../model/elecper";
 
 @Injectable({providedIn: null})
 export class Elecperservice {
+
+
     elecperServiceURL: string = "";
 
     constructor (private http: HttpClient) {
@@ -22,6 +24,10 @@ export class Elecperservice {
 
     public addElecper(json: any): Observable<any> {
         return this.http.post(this.elecperServiceURL + "addElecper", json);
+    }
+
+    deleteElecper(id: number): Observable<any> {
+        return this.http.delete(this.elecperServiceURL + "deleteElecper/" + id);
     }
 
     public editElecper(id: number, json: any): Observable<any> {

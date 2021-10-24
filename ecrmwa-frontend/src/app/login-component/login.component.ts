@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     let uuid = localStorage.getItem("ecrma_login");
 
     // Check if a user was already logged in
-    if(uuid != null) {
+    if(uuid?.trim().length != 0) {
       console.warn("[ECRMA] Somebody is already logged in. Logging out that account");
       this.onLogoutUser(); 
     }

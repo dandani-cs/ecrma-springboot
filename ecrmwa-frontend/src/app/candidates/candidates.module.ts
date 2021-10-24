@@ -9,6 +9,9 @@ import { AddCandidateComponent } from './add-candidate/add-candidate.component';
 import { FormsModule } from '@angular/forms';
 import { EditCandidateComponent } from './edit-candidate/edit-candidate.component';
 
+import { SearchCandidatesByPositionComponent } from './search-candidates-by-position/search-candidates-by-position.component';
+
+
 
 @NgModule({
   declarations: [
@@ -17,11 +20,12 @@ import { EditCandidateComponent } from './edit-candidate/edit-candidate.componen
     ShowCandidateDetailsComponent,
     AddCandidateComponent,
     EditCandidateComponent
+    SearchCandidatesByPositionComponent
   ],
   imports: [
     CommonModule,
     CandidatesRoutingModule,
-    FormsModule,
+    FormsModule
   ]
 })
 export class CandidatesModule { }
