@@ -59,6 +59,24 @@
         $('.side-sign-up').removeClass('side-sign-up-active')
     });
   </script>
+  <script>
+    function imgFunc1() {
+        var input = document.getElementById("imgfile");
+        var fReader = new FileReader();
+        fReader.readAsDataURL(input.files[0]);
+        fReader.onloadend = function(event){
+            //var img = document.getElementById("img");
+            var ngimg = document.getElementById("ngimg");
+            if(event.target.result != undefined) {
+              //img.src = event.target.result;
+              ngimg.src = event.target.result;
+            } else {
+              //img.src = "assets/candidates/USER BIG.png";
+              ngimg.src = "assets/candidates/USER BIG.png";
+            }
+        }
+    }
+  </script>
 </head>
 <body>
   <app-root></app-root>

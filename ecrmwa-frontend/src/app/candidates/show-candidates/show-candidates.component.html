@@ -51,13 +51,13 @@
               <a href="#" class="btn btn-main">Add candidate <i class="fs-6 bi-plus"></i></a>
             </div>
           </div>
-
+          
           <hr />
           <div class="row d-flex justify-content-center">
             <div *ngFor="let candidate of candidates" class="card col-12 col-sm-12 col-xl-5 ms-2 me-2 mb-3" >
                 <div class="row">
                   <div class="col-md-4" style="padding:0px;">
-                    <img src="assets/candidates/{{candidate.image_path}}" class="img-fluid rounded-start" alt="...">
+                    <img src="../../../../assets/candidates/{{candidate.image_path}}" class="img-fluid rounded-start" alt="...">
                   </div>
                   <div class="col-md-8 d-flex align-items-stretch" style="padding:0px;">
                     <div class="card-body">
@@ -67,8 +67,8 @@
                     </div>
                     <div class="card-footer text-muted">
                       <i class="fs-5 bi bi-info-circle-fill"></i>
-                      <i class="fs-5 bi bi-pencil-fill"></i>
-                      <i class="fs-5 bi bi-trash-fill"></i>
+                      <i class="fs-5 bi bi-pencil-fill" (click)="onClickEdit(candidate.id)"></i>
+                      <i class="fs-5 bi bi-trash-fill" (click)="onClickDelete(candidate.id)"></i>
                     </div> <!-- footer -->
                   </div>
                 </div>
@@ -76,7 +76,7 @@
             <div class="card col-12 col-sm-12 col-xl-5 ms-2 me-2 mb-3" >
               <div class="row">
                 <div class="col-md-4" style="padding:0px;">
-                  <img src="portrait.jpg" class="img-fluid rounded-start" alt="...">
+                  <img src="../../assets/candidates/portrait.jpg" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8 d-flex align-items-stretch" style="padding:0px;">
                   <div class="card-body">

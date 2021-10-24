@@ -28,7 +28,6 @@ export class EditElecperComponent implements OnInit {
       }
         
     });
-
   }
 
   onSubmit(editElecper: NgForm) {

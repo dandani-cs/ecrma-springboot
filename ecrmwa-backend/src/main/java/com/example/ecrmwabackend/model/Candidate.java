@@ -2,7 +2,7 @@ package com.example.ecrmwabackend.model;
 
 import javax.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
@@ -17,8 +17,8 @@ public class Candidate {
     private String first_name;
     private char   middle_initial;
 
-    private Date   birth_date;
-    private Date   grad_date;
+    private LocalDate   birth_date;
+    private LocalDate   grad_date;
 
     private String religion;
     private String sex;
@@ -34,8 +34,8 @@ public class Candidate {
     public Candidate(long   id, String last_name,
                      String first_name,
                      char   middle_initial,
-                     Date   birth_date,
-                     Date   grad_date,
+                     LocalDate   birth_date,
+                     LocalDate   grad_date,
                      String religion,
                      String sex,
                      String degree,
@@ -86,19 +86,19 @@ public class Candidate {
         this.middle_initial = middle_initial;
     }
 
-    public Date getBirth_date() {
+    public LocalDate getBirth_date() {
         return birth_date;
     }
 
-    public void setBirth_date(Date birth_date) {
+    public void setBirth_date(LocalDate birth_date) {
         this.birth_date = birth_date;
     }
 
-    public Date getGrad_date() {
+    public LocalDate getGrad_date() {
         return grad_date;
     }
 
-    public void setGrad_date(Date grad_date) {
+    public void setGrad_date(LocalDate grad_date) {
         this.grad_date = grad_date;
     }
 
