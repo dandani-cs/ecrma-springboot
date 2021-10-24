@@ -53,20 +53,17 @@
             
             <div class = "container-fluid d-flex justify-content-center">
                 <form class="d-flex col-sm-4 col-md-12 col-xl-10" >
-                    <input class="form-control me-2" (ngModelChange)="searchCandidates(key.value)" #key = "ngModel" ngModel name = "key" id = "search" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                    <select class="form-select" aria-label="Default select example" name = "position" id = "positionSelect">
+                        <option *ngFor="let position of positions" (click)="searchCandidates()" value= "{{position}}">{{position}}</option>
+                        <option (click)="searchCandidates()" value= "Any position" selected>Any position</option>
+                    </select>
 
-                <div class="input-group mb-0 col-sm-6 col-md-6 col-xl-4" style="margin-left:30px;">
-                  <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Election</button>
-                  <ul class="dropdown-menu dropdown-menu-end" role = "menu" name = "filter" id = "filter">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Separated link</a></li>
-                  </ul>
-                </div>
+                    <div class="input-group mb-0 col-sm-6 col-md-6 col-xl-4" style="margin-left:30px;">
+                        <select class="form-select" aria-label="Default select example" id = "elecperSelect">
+                            <option *ngFor="let elecper of elecpers" (click)="setPositions(elecper)" value="{{elecper.name}}">
+                                {{elecper.name}}</option>
+                        </select>
+                    </div>
                 </form>
             </div>
             
