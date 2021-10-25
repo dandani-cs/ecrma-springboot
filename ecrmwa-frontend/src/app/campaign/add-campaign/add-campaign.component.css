@@ -52,3 +52,7 @@
     margin-left: 0px;
     background-color: #215275;
 }
+
+#searchCollapse a, #searchCollapse ul, #searchCollapse i, #searchCollapse span{
+    color: white !important;
+}

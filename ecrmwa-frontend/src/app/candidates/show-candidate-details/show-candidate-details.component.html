@@ -1,7 +1,7 @@
 <div class="container-fluid navbar-vertical">
   <div class="row "  >
     <div class="col-sm-2 col-md-2 col-xl-2" style="background-color:#215275; ">
-       
+
         <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
             <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                 <span class="fs-5 d-none d-sm-inline">Menu</span>
@@ -63,7 +63,7 @@
         <br>
         <div class = "container col-sm-3 col-md-10  col-lg-10  col-xl-11 " style="background-color: #fff; padding:40px; overflow-x: hidden;">
           <form >
-          <img src="../../assets/candidates/{{candidate.image_path}}" id="ngimg" width="150" height="150" style="border-style:solid" onclick="document.getElementById('imgfile').click();"/>
+          <img src="../../assets/candidates/{{candidate.image_path}}" id="ngimg" width="150" height="180" style="border-style:solid" onclick="document.getElementById('imgfile').click();"/>
           <input type="file" id="imgfile" name="imgfile" accept="image/*" onchange="imgFunc1();" style = "display: none;">
           <div class="container group">
              <input type="text" class = "form-control personal p2" id="last_name" name="last_name" value="{{candidate.last_name}}" ngModel disabled><br>
@@ -72,6 +72,7 @@
              <div class="d-grid gap-2 d-md-block">
              </div>
           </div>
+            <br><br>
             <button class="btn btn-primary bbutton" (click)="onClickEdit(candidate.id)">EDIT</button>
             <button class="btn btn-primary bbutton" (click)="onClickDelete(candidate.id)">DELETE</button>
           <div class="container group1" style="display: inline-block;">
@@ -115,10 +116,12 @@
           </form>
 
             
-            <div class="container group1">
+            <div class="container group1" >
                 <p class = "p5"> Campaigns </p>
             </div>
-                
+            <span class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: -40px;">
+                <button class="btn btn-primary bbutton1" type="button"  style="font-size: 15px;">Add Campaign</button> &nbsp;
+            </span>    
             <hr>
             
             <div *ngFor="let campaign of campaigns" class="container-fluid card" style="padding-top:20px; margin-bottom: 20px">
