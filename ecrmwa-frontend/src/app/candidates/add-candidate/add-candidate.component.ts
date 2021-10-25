@@ -32,7 +32,7 @@ export class AddCandidateComponent implements OnInit {
       (error) => console.log(error)
     );
 
-    this.router.navigate(['/candidates/all']).
+    this.router.navigate(['/candidates/show-candidates']).
     then(() => {
 
       window.location.reload()
