@@ -1,0 +1,140 @@
+<div class="container-fluid" style="float:left;">
+    <div class="row" style="height:100vh;">
+      <div class="col-sm-2 col-md-2 col-xl-2" style="background-color:#215275; ">
+         
+        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <span class="fs-5 d-none d-sm-inline">Menu</span>
+            </a>
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                <li>
+                    <a href="#candidatesCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                        <i class="fs-4 bi-person text-white"></i> <span class="ms-1 d-none d-sm-inline text-white">Candidates</span> </a>
+                    <ul class="collapse show nav flex-column ms-1" id="candidatesCollapse" data-bs-parent="#menu">
+                        <li class="ms-4">
+                            <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-people text-white"></i> <span class="d-none d-sm-inline text-white">Show candidates </span></a>
+                        </li>
+                        <li class="ms-4">
+                            <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-person-plus text-white"></i> <span class="d-none d-sm-inline text-white" >Add candidate</span> </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#elecperCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                        <i class="fs-4 bi-calendar-event text-white"></i> <span class="ms-1 d-none d-sm-inline text-white">Elections</span> </a>
+                    <ul class="collapse show nav flex-column ms-1" id="elecperCollapse" data-bs-parent="#menu">
+                        <li class="ms-4">
+                            <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-calendar-range text-white"></i> <span class="d-none d-sm-inline text-white">Show  elections</span> </a>
+                        </li>
+                        <li class="ms-4">
+                            <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-calendar-plus text-white"></i> <span class="d-none d-sm-inline text-white">Add election </span> </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+<hr>
+            <div class="dropdown pb-4">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="d-none d-sm-inline mx-1">user</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+
+          </div>
+      </div>
+      <div class="col-sm-2 col-md-6  col-lg-10 col-xl-10" style="background-color:#E8E8E8; padding:40px;">
+        
+          <div class = "container-fluid header" style="margin-left: -15px;">
+              <p class = "p1"> Add Campaign </p>
+              <hr>
+          </div>
+          <form #addCampaign="ngForm" (ngSubmit)="onSubmit(addCampaign)" novalidate>
+            
+        
+          <div class = "container-fluid col-sm-3 col-md-10  col-lg-10  col-xl-10 " style="background-color: #fff; padding:40px;">
+              
+                  <div class="col-xl-3" style="display:inline-block;">
+                     <p class = "p3"> Candidate: </p>
+                  </div>
+                  
+
+                  
+                  <div class="dropdown col-xl-8" style="display:inline-block;">
+                      <div class="input-group" >
+                      <select class="form-select" id="inputGroupSelect01" name="candidate" ngModel>
+                      <option *ngFor="let candidate of candidates" value="{{candidate.id}}">{{candidate.last_name}}, {{candidate.first_name}} {{candidate.middle_initial}}</option>
+                    </select>
+                      </div>
+                  </div>
+                  
+                  <div class="col-xl-3" style="display:inline-block;">
+                     <p class = "p3"> Election Period: </p>
+                  </div>
+                  
+                  <div class="dropdown col-xl-8" style="display:inline-block;">
+                      <div class="input-group" >
+                      <select class="form-select" id="inputGroupSelect01" name="elecper" ngModel>
+                        <option *ngFor="let election of elections" value="{{election.elecper_id}}">{{election.name}}</option>
+                    </select>
+                      </div>
+                  </div>
+              
+                  <div class="col-xl-3" style="display:inline-block;">
+                     <p class = "p3"> Party: </p>
+                  </div>
+                  
+                  <div class="dropdown col-xl-8" style="display:inline-block;">
+                      <div class="input-group" >
+                          <input type="text" class="form-control" name="party" aria-label="Party" ngModel>
+                      
+                      </div>
+                  </div>
+                  
+                  <div class="col-xl-3" style="display:inline-block;">
+                     <p class = "p3"> Position: </p>
+                  </div>
+                  
+                  <div class="dropdown col-xl-8" style="display:inline-block;">
+                      <div class="input-group" >
+                          <input type="text" class="form-control" name="position" aria-label="Position" ngModel>
+                      
+                      </div>
+                  </div>
+                  
+                  <div class="col-xl-3" style="display:inline-block;">
+                     <p class = "p3"> Platform: </p>
+                  </div>
+                  
+                  <div class="dropdown col-xl-8" style="display:inline-block;">
+                      <div class="input-group" >
+                          <textarea name="platform" cols="100" rows="5" ngModel></textarea>
+                      
+                      </div>
+                  </div>
+                  
+                  <br><br><br>
+                  
+                  <div class="container col-sm-10 col-md-12 col-lg-10 col-xl-10">
+                      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-primary bbutton1" type="button">Cancel</button> &nbsp;
+                        <button class="btn btn-primary bbutton1" type="submit">Save</button>
+                      </div>
+                  </div>
+              
+            </div>
+        </form>		
+        </div>
+        </div>
+        </div>
+<script src="js/bootstrap.min.js">  </script>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- Optional JavaScript; choose one of the two! -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

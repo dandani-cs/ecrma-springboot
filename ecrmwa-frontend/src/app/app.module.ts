@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ElecperModule } from './elecper/elecper.module';
 import { CandidatesModule } from './candidates/candidates.module';
 import { SearchCandidatesComponent } from './candidates/search-candidates/search-candidates.component';
+import { CampaignModule } from './campaign/campaign.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SearchCandidatesComponent } from './candidates/search-candidates/search
     HttpClientModule,
     ElecperModule,
     FormsModule,
-    CandidatesModule
+    CandidatesModule,
+    CampaignModule
   ],
   providers: [],
   bootstrap: [AppComponent]
