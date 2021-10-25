@@ -36,6 +36,13 @@ public class UserService implements IUserService {
     }
 
     @Override
+    public User findByEmail(String email)
+    {
+        Optional<User> user = repository.findByEmail(email);
+        return user.isEmpty() ? null : user.get();
+    }
+
+    @Override
     public User findByUUID(String uuid)
     {
         Optional<User> user = repository.findByUuid(uuid);
