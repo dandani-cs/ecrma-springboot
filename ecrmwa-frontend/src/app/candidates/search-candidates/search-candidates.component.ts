@@ -45,4 +45,5 @@ export class SearchCandidatesComponent implements OnInit {
     if(!key)
       this.results = this.candidates;
   }
+
 }
