@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
           })
           console.log("[ECRMA] ", loginInfo)
           localStorage.setItem("ecrma_login", loginInfo);
+          this.router.navigate(['candidates/show-candidates']);
         }
       }
     )

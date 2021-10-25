@@ -32,4 +32,8 @@ export class ShowCandidatesComponent implements OnInit {
     console.log("candidate id: " + id);
     this.router.navigate(['/candidates/edit/' + id]);
   }
+
+  onClickInfo(id: number) {
+    this.router.navigate(['/candidates/show/' + id]);
+  }
 }
