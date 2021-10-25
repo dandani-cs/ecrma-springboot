@@ -7,7 +7,7 @@
               <span class="fs-5 d-none d-sm-inline">Menu</span>
           </a>
           <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-              <li>
+              <li *ngIf="is_admin">
                   <a href="#candidatesCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                       <i class="fs-4 bi-person text-white"></i> <span class="ms-1 d-none d-sm-inline text-white">Candidates</span> </a>
                   <ul class="collapse show nav flex-column ms-1" id="candidatesCollapse" data-bs-parent="#menu">
@@ -19,7 +19,7 @@
                       </li>
                   </ul>
               </li>
-              <li>
+              <li *ngIf="is_admin">
                   <a href="#elecperCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                       <i class="fs-4 bi-calendar-event text-white"></i> <span class="ms-1 d-none d-sm-inline text-white">Elections</span> </a>
                   <ul class="collapse show nav flex-column ms-1" id="elecperCollapse" data-bs-parent="#menu">
@@ -31,6 +31,21 @@
                       </li>
                   </ul>
               </li>
+              <li>
+                <a href="#searchCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                    <i class="fs-4 bi bi-search"></i> <span class="ms-1 d-none d-sm-inline">Search</span> </a>
+                <ul class="collapse show nav flex-column ms-1" id="elecperCollapse" data-bs-parent="#menu">
+                    <li class="ms-4">
+                    <a href="candidates/search-name" class="nav-link px-0"> <i class="fs-6 bi bi-person-badge"></i>  &nbsp; <span class="d-none d-sm-inline">Search Candidate</span>  </a>
+                    </li>
+                    <li class="ms-4">
+                        <a href="candidates/search-position" class="nav-link px-0"> <i class="fs-6 bi bi-list-task"></i>  &nbsp; <span class="d-none d-sm-inline">Search by Position</span>  </a>
+                    </li>
+                    <li class="ms-4">
+                        <a href="candidates/search-party" class="nav-link px-0"> <i class="fs-6 bi bi-collection-fill"></i>  &nbsp; <span class="d-none d-sm-inline">Search by Party</span>  </a>
+                    </li>
+                </ul>
+            </li>
           </ul>
 <hr>
           <div class="dropdown pb-4">
