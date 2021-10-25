@@ -5,12 +5,14 @@ import { CampaignRoutingModule } from './campaign-routing.module';
 import { CampaignComponent } from './campaign.component';
 import { AddCampaignComponent } from './add-campaign/add-campaign.component';
 import { FormsModule } from '@angular/forms';
+import { EditCampaignComponent } from './edit-campaign/edit-campaign.component';
 
 
 @NgModule({
   declarations: [
     CampaignComponent,
-    AddCampaignComponent
+    AddCampaignComponent,
+    EditCampaignComponent
   ],
   imports: [
     CommonModule,

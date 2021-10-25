@@ -9,7 +9,13 @@ const routes: Routes = [
     component: AddCampaignComponent,  
     canActivate: [AuthGuard],
     data: { expectedRole: 'admin'}
-  }];
+  },
+  { path: 'campaigns/edit/:id', 
+    component: EditCampaignComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'admin'}
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

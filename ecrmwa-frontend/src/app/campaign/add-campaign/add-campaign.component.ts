@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { CandidatesModule } from 'src/app/candidates/candidates.module';
 import { Candidate } from 'src/app/candidates/model/candidate';
 import { CandidateService } from 'src/app/candidates/service/candidate-service.service';
