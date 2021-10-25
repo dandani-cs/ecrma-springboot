@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddCampaignComponent } from './add-campaign/add-campaign.component';
 import { CampaignComponent } from './campaign.component';
 import { AuthGuardService as AuthGuard } from '../auth/auth-guard.service';
+import { EditCampaignComponent } from './edit-campaign/edit-campaign.component';
 
 const routes: Routes = [
   { path: 'campaigns/add', 
