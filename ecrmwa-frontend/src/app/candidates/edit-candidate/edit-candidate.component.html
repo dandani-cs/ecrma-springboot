@@ -66,9 +66,9 @@
                <img src="../../assets/candidates/{{candidate.image_path}}" id="ngimg" width="150" height="180" style="border-style:solid" onclick="document.getElementById('imgfile').click();"/>
                <input type="file" id="imgfile" name="imgfile" accept="image/*" onchange="imgFunc1();" style = "display: none;">
                <div class="container group" style="margin-top: -170px;">
-                  <input type="text" class = "form-control personal p2" id="last_name" name="last_name" value="{{candidate.last_name}}" ngModel><br>
-                  <input type="text" class = "form-control personal p2" id="middle_initial" name="middle_initial" value="{{candidate.middle_initial}}" maxlength="1" ngModel><br>
-                  <input type="text" class = "form-control personal p2" id="first_name" name="first_name" value="{{candidate.first_name}}" ngModel><br>
+                  <input type="text" class = "form-control personal p2" id="last_name" name="last_name" ngModel="{{candidate.last_name}}" ><br>
+                  <input type="text" class = "form-control personal p2" id="middle_initial" name="middle_initial" ngModel="{{candidate.middle_initial}}" maxlength="1" ><br>
+                  <input type="text" class = "form-control personal p2" id="first_name" name="first_name" ngModel="{{candidate.first_name}}" ><br>
                   <div class="d-grid gap-2 d-md-block">
                   </div>
                </div>
@@ -78,9 +78,9 @@
                <hr>
                <div class="container col-sm-10 col-md-10 col-lg-10 col-xl-10" >
                   <div class="input-group mb-3 ">
-                     <input type="date" class="form-control personal" placeholder="Birthdate" name = "birth_date" aria-label="Birthdate" value = "{{candidate.birth_date}}" ngModel> &nbsp; &nbsp;
-                     <input type="text" class="form-control personal" name="sex" placeholder="Sex" aria-label="Sex" value="{{candidate.sex}}" ngModel> &nbsp; &nbsp;
-                     <input type="text" class="form-control personal" name="religion" placeholder="Religion" aria-label="Religion" value="{{candidate.religion}}" ngModel>
+                     <input type="date" class="form-control personal" placeholder="Birthdate" name = "birth_date" aria-label="Birthdate" ngModel = "{{candidate.birth_date}}" > &nbsp; &nbsp;
+                     <input type="text" class="form-control personal" name="sex" placeholder="Sex" aria-label="Sex" ngModel="{{candidate.sex}}" > &nbsp; &nbsp;
+                     <input type="text" class="form-control personal" name="religion" placeholder="Religion" aria-label="Religion" ngModel="{{candidate.religion}}" >
                   </div>
                   <div class="container" >
                      <div class="row">
@@ -102,11 +102,11 @@
                <hr>
                <div class="container col-sm-10 col-md-10 col-xl-10">
                   <div class="input-group mb-3">
-                     <input type="text" class="form-control personal" name="degree" placeholder="Course" value="{{candidate.degree}}" aria-label="Course" ngModel> &nbsp; &nbsp;
-                     <input type="date" class="form-control personal" name="grad_date" placeholder="Date" value="{{candidate.grad_date}}" aria-label="Date" ngModel>
+                     <input type="text" class="form-control personal" name="degree" placeholder="Course" ngModel="{{candidate.degree}}" aria-label="Course"> &nbsp; &nbsp;
+                     <input type="date" class="form-control personal" name="grad_date" placeholder="Date" ngModel="{{candidate.grad_date}}" aria-label="Date">
                   </div>
                   <div class="input-group mb-3">
-                     <input type="text" class="form-control p4" name="university" placeholder="University" aria-label="University" value = "{{candidate.university}}" ngModel>
+                     <input type="text" class="form-control p4" name="university" placeholder="University" aria-label="University" ngModel = "{{candidate.university}}">
                   </div>
                </div>
                <br>
