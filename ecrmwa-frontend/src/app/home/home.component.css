@@ -155,6 +155,17 @@ a, a:hover, a:focus, a:active {
     width: 100%;
     object-fit: cover;
 }
+
+.carousel-inner {
+    background-color: black !important;
+}
+
+.carousel-inner>.carousel-item {
+    -webkit-transition: 0s !important;
+    -o-transition: 0s !important;
+    transition: 0s !important;
+}
+
 .main-img{
     margin-top:-5%;
     width:300px;
@@ -225,12 +236,13 @@ a, a:hover, a:focus, a:active {
 }
 .via-social{
     display: flex;
+    margin-bottom: 0px;
     justify-content: center;
     align-items: center;
 }
 .via-social a{
-    width:33px;
-    height: 33px;
+    width:35px;
+    height: 35px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -240,13 +252,13 @@ a, a:hover, a:focus, a:active {
     color: #ffffff;
 }
 .via-social a:nth-child(1){
-    background-color: #155ee6;
-}
-.via-social a:nth-child(2){
     background-color: #eb1515;
 }
-.via-social a:nth-child(3){
+.via-social a:nth-child(2){
     background-color: #197cfd;
+}
+.via-social a:nth-child(3){
+    background-color: #eb1515;
 }
 .side-login,
 .side-sign-up{
@@ -522,8 +534,8 @@ a, a:hover, a:focus, a:active {
   background-position: center;
   color: #efefef!important;
   background-attachment: fixed;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 
 }
 
@@ -535,7 +547,7 @@ a, a:hover, a:focus, a:active {
 }
 
 .section1-h1 p {
-	font-size: 16px;
+	font-size: 18px;
 }
 
 /*----SECTION 2----*/
