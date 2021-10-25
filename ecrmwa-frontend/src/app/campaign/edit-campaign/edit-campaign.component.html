@@ -89,7 +89,7 @@
                 
                 <div class="dropdown col-xl-8" style="display:inline-block;">
                     <div class="input-group" >
-                        <input type="text" class="form-control" name="party" aria-label="Party" value="{{campaign.party}}" ngModel>
+                        <input type="text" class="form-control" name="party" aria-label="Party" ngModel="{{campaign.party}}">
                     
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                 
                 <div class="dropdown col-xl-8" style="display:inline-block;">
                     <div class="input-group" >
-                        <input type="text" class="form-control" name="position" aria-label="Position" value="{{campaign.position}}" ngModel>
+                        <input type="text" class="form-control" name="position" aria-label="Position" ngModel="{{campaign.position}}">
                     
                     </div>
                 </div>
@@ -111,8 +111,7 @@
                 
                 <div class="dropdown col-xl-8" style="display:inline-block;">
                     <div class="input-group" >
-                        <textarea name="platform" cols="100" rows="5" value="{{campaign.platform}}" ngModel></textarea>
-                    
+                        <textarea name="platform" cols="100" rows="5" ngModel="{{campaign.platform}}"></textarea>
                     </div>
                 </div>
                 
@@ -120,7 +119,7 @@
                 
                 <div class="container col-sm-10 col-md-12 col-lg-10 col-xl-10">
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                      <button class="btn btn-primary bbutton1" type="button">Cancel</button> &nbsp;
+                      <button class="btn btn-primary bbutton1" type="button" (click)="onClickCancel()">Cancel</button> &nbsp;
                       <button class="btn btn-primary bbutton1" type="submit">Save</button>
                     </div>
                 </div>

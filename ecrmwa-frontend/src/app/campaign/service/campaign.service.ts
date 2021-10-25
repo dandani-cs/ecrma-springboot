@@ -26,7 +26,7 @@ export class CampaignService {
   }
 
   public editCampaign(id: number, id2: number, id3:number, json: any): Observable<any> {
-    return this.http.post(this.apiURL + "updateCampaign/" + id + "/" + id2 + "/" + id3, json);
+    return this.http.put(this.apiURL + "updateCampaign/" + id + "/" + id2 + "/" + id3, json);
   }
 
   public getPositionsOfElecPer(id: number): Observable<string[]> {

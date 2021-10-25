@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
@@ -24,7 +25,8 @@ export class EditCampaignComponent implements OnInit {
   currentElection: Elecper = new Elecper();
   campaign = new Campaign();
 
-  constructor(private campaignService: CampaignService,
+  constructor( private http: HttpClient,
+    private campaignService: CampaignService,
     private candidateService: CandidateService,
     private elecperService: Elecperservice,
     private route: ActivatedRoute,
@@ -42,22 +44,40 @@ export class EditCampaignComponent implements OnInit {
   });
   }
 
+  onClickCancel() {
+    this.router.navigate(['/candidates/all']);
+  }
 
   onSubmit(editCampaign: NgForm): void {
     editCampaign.value["campaign_id"] = this.id;
 
     var select = (<HTMLSelectElement> document.getElementById("inputGroupSelect01"));
     var select2 = ((<HTMLSelectElement> document.getElementById("inputGroupSelect01")).options[select.selectedIndex].value);
-    //editCampaign.value["candidate"] = this.candidateService.getCandidate(parseInt(select2));
-
 
     var selectb = (<HTMLSelectElement> document.getElementById("inputGroupSelect02"));
-    var selectb2 = ((<HTMLSelectElement> document.getElementById("inputGroupSelect02")).options[select.selectedIndex].value);
-    //editCampaign.value["elecper"] = this.candidateService.getCandidate(parseInt(selectb2));
+    var selectb2 = ((<HTMLSelectElement> document.getElementById("inputGroupSelect02")).options[selectb.selectedIndex].value);
 
-    this.campaignService.editCampaign(this.id, parseInt(select2), parseInt(selectb2), editCampaign.value).subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error)
-    );
+    this.candidateService.getCandidate(parseInt(select2)).subscribe(
+      (candidate: Candidate) => {
+        this.elecperService.getElecper(parseInt(selectb2)).subscribe(
+          (eper: Elecper) => {
+            console.log("Found candidate", candidate);
+            console.log("Found eper", candidate);
+
+            editCampaign.value['candidate'] = candidate;
+            editCampaign.value['elecper'] = eper;
+            console.log("FORM VALUE", editCampaign.value);
+
+            this.campaignService.addCampaign(editCampaign.value).subscribe(
+              (response) => {
+                console.log(response);
+                this.router.navigate(['/candidates/show/' + editCampaign.value['candidate'].id])
+              },
+              (error) => console.log(error)
+            );
+          }
+        )
+      }
+    )
   }
 }
