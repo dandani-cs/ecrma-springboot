@@ -21,11 +21,12 @@ const routes: Routes = [
     data: { expectedRole: 'any'}
   },
   
-  { path: 'candidates/show-candidate-details', 
+  { path: 'candidates/show/:id', 
     component: ShowCandidateDetailsComponent,
     canActivate: [AuthGuard],
     data: {expectedRole: 'any'}
   },
+  
   { path: 'candidates/add', 
   component: AddCandidateComponent,
   canActivate: [AuthGuard],

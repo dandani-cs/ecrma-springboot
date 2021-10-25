@@ -41,6 +41,7 @@ export const ROUTES: Routes = [
   
   { path: 'elections', loadChildren: () => import('./elecper/elecper.module').then(m => m.ElecperModule) },
   { path: 'candidates', loadChildren: () => import('./candidates/candidates.module').then(m => m.CandidatesModule) },
+  { path: 'campaigns', loadChildren: () => import('./campaign/campaign.module').then(m => m.CampaignModule) },
 ];
 
 
