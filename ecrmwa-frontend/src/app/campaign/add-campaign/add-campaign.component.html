@@ -45,27 +45,27 @@
           </div>
       </div>
       <div class="col-sm-2 col-md-6  col-lg-10 col-xl-10" style="background-color:#E8E8E8; padding:40px;">
+        
           <div class = "container-fluid header" style="margin-left: -15px;">
               <p class = "p1"> Add Campaign </p>
               <hr>
           </div>
+          <form #addCampaign="ngForm" (ngSubmit)="onSubmit(addCampaign)" novalidate>
+            
+        
           <div class = "container-fluid col-sm-3 col-md-10  col-lg-10  col-xl-10 " style="background-color: #fff; padding:40px;">
               
                   <div class="col-xl-3" style="display:inline-block;">
                      <p class = "p3"> Candidate: </p>
                   </div>
                   
+
+                  
                   <div class="dropdown col-xl-8" style="display:inline-block;">
                       <div class="input-group" >
-                      <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                      <button class="navbar-toggler btn btn-outline-secondary dropdown-toggle" style="border:solid 1px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Separated link</a></li>
-                      </ul>
+                      <select class="form-select" id="inputGroupSelect01" name="candidate" ngModel>
+                      <option *ngFor="let candidate of candidates" value="{{candidate.id}}">{{candidate.last_name}}, {{candidate.first_name}} {{candidate.middle_initial}}</option>
+                    </select>
                       </div>
                   </div>
                   
@@ -75,15 +75,9 @@
                   
                   <div class="dropdown col-xl-8" style="display:inline-block;">
                       <div class="input-group" >
-                      <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                      <button class="navbar-toggler btn btn-outline-secondary dropdown-toggle" style="border:solid 1px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Separated link</a></li>
-                      </ul>
+                      <select class="form-select" id="inputGroupSelect01" name="elecper" ngModel>
+                        <option *ngFor="let election of elections" value="{{election.elecper_id}}">{{election.name}}</option>
+                    </select>
                       </div>
                   </div>
               
@@ -93,7 +87,7 @@
                   
                   <div class="dropdown col-xl-8" style="display:inline-block;">
                       <div class="input-group" >
-                          <input type="text" class="form-control" aria-label="Party">
+                          <input type="text" class="form-control" name="party" aria-label="Party" ngModel>
                       
                       </div>
                   </div>
@@ -104,7 +98,7 @@
                   
                   <div class="dropdown col-xl-8" style="display:inline-block;">
                       <div class="input-group" >
-                          <input type="text" class="form-control" aria-label="Position">
+                          <input type="text" class="form-control" name="position" aria-label="Position" ngModel>
                       
                       </div>
                   </div>
@@ -115,7 +109,7 @@
                   
                   <div class="dropdown col-xl-8" style="display:inline-block;">
                       <div class="input-group" >
-                          <textarea name="Platform" cols="100" rows="5"></textarea>
+                          <textarea name="platform" cols="100" rows="5" ngModel></textarea>
                       
                       </div>
                   </div>
@@ -125,11 +119,15 @@
                   <div class="container col-sm-10 col-md-12 col-lg-10 col-xl-10">
                       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <button class="btn btn-primary bbutton1" type="button">Cancel</button> &nbsp;
-                        <button class="btn btn-primary bbutton1" type="button">Save</button>
+                        <button class="btn btn-primary bbutton1" type="submit">Save</button>
                       </div>
                   </div>
               
-  </div>		
+            </div>
+        </form>		
+        </div>
+        </div>
+        </div>
 <script src="js/bootstrap.min.js">  </script>
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

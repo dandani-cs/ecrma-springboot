@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CampaignRoutingModule } from './campaign-routing.module';
 import { CampaignComponent } from './campaign.component';
 import { AddCampaignComponent } from './add-campaign/add-campaign.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AddCampaignComponent } from './add-campaign/add-campaign.component';
   ],
   imports: [
     CommonModule,
-    CampaignRoutingModule
+    CampaignRoutingModule,
+    FormsModule
   ]
 })
 export class CampaignModule { }

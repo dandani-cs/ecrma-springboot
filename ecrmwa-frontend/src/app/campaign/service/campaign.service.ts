@@ -17,6 +17,10 @@ export class CampaignService {
     return this.http.get<Campaign[]>(this.apiURL + "getCampaigns");
   }
 
+  public addCampaign(json: any): Observable<any> {
+    return this.http.post(this.apiURL + "addCampaign", json);
+  }
+
   public getPositionsOfElecPer(id: number): Observable<string[]> {
     return this.http.get<string[]>(this.apiURL + '/getPositionsOfElecper/' + id)
   }
