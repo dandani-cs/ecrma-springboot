@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthGuardService } from '../auth/auth-guard.service';
 import { User } from '../model/user/user';
 import { AuthService } from '../service/authservice/auth.service';
@@ -13,9 +14,12 @@ export class LoginComponent implements OnInit {
 
   users: User[] = []
 
-  constructor(private authService: AuthService, private authGuardService: AuthGuardService) { }
+  constructor(private authService: AuthService, 
+              private authGuardService: AuthGuardService,
+              private router: Router) { }
 
   ngOnInit(): void {
+    this.onLogoutUser();
     this.authService.getUsers().subscribe((data: User[]) => { this.users = data });
   }
 
@@ -57,6 +61,7 @@ export class LoginComponent implements OnInit {
       )
       console.log("[ECRMA] Logging out", uuid);
       localStorage.removeItem("ecrma_login");
+      this.router.navigate(['/index']);
     } else
       console.error("[ECRMA] Failed to logout!");
   }
