@@ -34,5 +34,9 @@ export class Elecperservice {
         return this.http.put(this.elecperServiceURL + "updateElecper/" + id, json);
     }
 
+    public updateElecperArchive(id: number): Observable<any> {
+        return this.http.patch(this.elecperServiceURL + "updateElecperArchive/" + id,"");
+    }
+
 
 }

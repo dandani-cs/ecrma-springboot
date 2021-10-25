@@ -10,6 +10,6 @@ public interface IElecperService {
     Elecper getElecper(Long elecper_id);
     Elecper addElecper(Elecper elecPer);
     Elecper updateElecper(Elecper elecPer);
-    void updateElecperArchive(Long elecper_id, boolean archive);
+    void updateElecperArchive(Long elecper_id);
     void deleteElecper(Long elecper_id);
 }

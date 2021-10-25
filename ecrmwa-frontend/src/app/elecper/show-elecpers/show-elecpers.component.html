@@ -38,89 +38,95 @@
               <ul id="menuu">
               <li style="list-style: none"><a href="#" >Sign Out</a></li>
               </ul>
+              </div>
+            </div>
+        </div>
+        
+        <div class="main-content container-fluid col py-3">
+          <div class="row">
+            <div class="col-12 col-sm-9">
+              <h1 class="main-color"> ELECTIONS </h1>
+            </div>
+            <div class="col-12 col-sm-3">
+              <a href="elections/add" class="btn btn-main" style="float:right">Add election <i class="fs-6 bi-plus"></i></a>
+            </div>
+          </div>
+  
+          <hr />
+  
+          <div class="list-group list-group-flush election-list">
+            <a *ngFor="let election of elections" href="#" class="list-group-item list-group-item-action" aria-current="true">
+              <div class="d-flex w-100 justify-content-between">
+                <h2 class="mb-1 main-color"> {{ election.name }}</h2>
+                <small>
+                  <a href="#elec-arc-modal-{{election.elecper_id}}" data-toggle="modal" data-target="#elec-arc-modal-{{election.elecper_id}}" ><i class="fs-5 bi bi-archive-fill" style="margin-right: 10px;"></i></a>
+                  <i class="fs-5 bi bi-pencil-fill" style="margin-right: 10px;"></i>
+                  <a href="#elec-del-modal-{{election.elecper_id}}" data-toggle="modal" data-target="#elec-del-modal-{{election.elecper_id}}" ><i class="fs-5 bi bi-trash-fill"></i> </a>
+                </small>
+              </div>
+              <p class="mb-0"><b>{{election.fdate}}</b></p>
+              <small *ngIf="election.archived; else activeArchived">Archived</small>
+              <ng-template #activeArchived>Active</ng-template>
+              <br>
+            </a>
+          </div> <!--list group -->
+        </div> <!--main-content -->
+        <br><br>
+  
+      </div> <!-- nav row -->
+        <!--delete modal-->
+        <a *ngFor="let election of elections"> 
+        <div class="modal fade election-list" id="elec-del-modal-{{election.elecper_id}}">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">  
+                      <h4> Delete Election Period </h4>
+                  </div>
+                  <div class="modal-body" >
+                      <p style="text-align: center; font-size: 20px;"> Are you sure you want to delete <br> election name: {{ election.name }} </p>
+                  </div>
+                  <div class="modal-footer">
+                      <div class="container">
+                          <div class="row">
+                          <span>
+                          <!-- back button -->
+                          <a href="/elections/all"> <input class="btn col-md-6" style="background-color: #215275; color: #fff; margin-left: -10px; margin-right: 10px;" data-dismiss="modal" value="Back"> </a>
+                          <!-- delete button -->
+                          <a href="/elections/all"> <input class="btn btn-danger col-md-6" style="margin-left: 10px; margin-right: -10px;" (click)="onClickDelete(election.elecper_id)" value="Delete"> </a>
+                          </span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
           </div>
       </div>
-      
-      <div class="main-content container-fluid col py-3">
-        <div class="row">
-          <div class="col-12 col-sm-9">
-            <h1 class="main-color"> ELECTIONS </h1>
-          </div>
-          <div class="col-12 col-sm-3">
-            <a href="elections/add" class="btn btn-main" style="float:right">Add election <i class="fs-6 bi-plus"></i></a>
-          </div>
-        </div>
+      </a>
 
-        <hr />
-
-        <div class="list-group list-group-flush election-list">
-          <a *ngFor="let election of elections" href="#" class="list-group-item list-group-item-action" aria-current="true">
-            <div class="d-flex w-100 justify-content-between">
-              <h2 class="mb-1 main-color"> {{ election.name }}</h2>
-              <small>
-                <a href="#" data-toggle="modal" data-target="#elec-arc-modal"><i class="fs-5 bi bi-archive-fill" style="margin-right: 10px;"></i></a>
-                <i class="fs-5 bi bi-pencil-fill" style="margin-right: 10px;"></i>
-                <a href="#" data-toggle="modal" data-target="#elec-del-modal"><i class="fs-5 bi bi-trash-fill"></i> </a>
-              </small>
-            </div>
-            <p class="mb-0"><b>{{election.fdate}}</b></p>
-            <small *ngIf="election.archived; else activeArchived">Archived</small>
-            <ng-template #activeArchived>Active</ng-template>
-            <br>
+        <!--archive modal-->
+        <a *ngFor="let election of elections"> 
+            <div class="modal fade election-list" id="elec-arc-modal-{{election.elecper_id}}">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">  
+                        <h4> Archive Election Period </h4>
+                      </div>
+                      <div class="modal-body" >
+                        <p style="text-align: center; font-size: 20px;"> Are you sure you want to archive <br> election period: {{election.name}} </p>
+                      </div>
+                      <div class="modal-footer">
+                          <div class="container">
+                              <div class="row">
+                              <span>
+                              <!-- back button -->
+                              <a href="/elections/all"> <input class="btn col-md-6" style="background-color: #215275; color: #fff; margin-left: -10px; margin-right: 10px;" data-dismiss="modal" value="Back"> </a>
+                              <!-- delete button -->
+                              <a href="/elections/all"> <input class="btn btn-danger col-md-6" style="margin-left: 10px; margin-right: -10px;" (click)="onClickArchive(election.elecper_id)" value="Archive"> </a>
+                              </span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
           </a>
-        </div> <!--list group -->
-      </div> <!--main-content -->
-      <br><br>
-      <!--delete modal-->
-    
-      <div class="modal fade election-list" id="elec-del-modal">
-        <a *ngFor="let election of elections" href="#" aria-current="true" style="text-decoration: none;"> 
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">  
-                    <h4> Delete Election Period </h4>
-                </div>
-                <div class="modal-body" >
-                    <p style="text-align: center; font-size: 20px;"> Are you sure you want to delete <br> election name: {{ election.name }} </p>
-                </div>
-                <div class="modal-footer">
-                    <div class="container">
-                        <div class="row">
-                        <span>
-                        <!-- back button -->
-                        <a href="/elections/all"> <input class="btn col-md-6" style="background-color: #215275; color: #fff; margin-left: -10px; margin-right: 10px;" data-dismiss="modal" value="Back"> </a>
-                        <!-- delete button -->
-                        <a href="/elections/all"> <input class="btn btn-danger col-md-6" style="margin-left: 10px; margin-right: -10px;" (click)="onClickDelete(election.elecper_id)" value="Delete"> </a>
-                        </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </div>
-      <!--archive modal-->
-      <div class="modal fade" id="elec-arc-modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4> Archive Election Period </h4>
-                </div>
-                <div class="modal-body">
-                    <p style="text-align: center; font-size: 20px;"> Are you sure you want to archive <br> election period: [name] </p>
-                </div>
-                <div class="modal-footer">
-                    <div class="container">
-                        <div class="row">
-                        <!-- back button -->
-                        <input class="btn col-md-6" style="background-color: #215275; color: #fff; margin-left: -10px; margin-right: 10px;" data-dismiss="modal" value="Back"> 
-                        <!-- delete button -->
-                        <input class="btn btn-danger col-md-6" style="margin-left: 10px; margin-right: -10px;" value="Archive">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-  </div>
-</div> <!-- nav row -->
-</div> <!-- nav -->   
+  </div> <!-- nav -->   
