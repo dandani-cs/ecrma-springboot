@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
           if(user.is_admin == true) {
             this.router.navigate(['/candidates'])
           } else {
-            this.router.navigate(['/search'])
+            this.router.navigate(['/candidates/search-name'])
           }
         }
       }
@@ -72,6 +72,38 @@ export class HomeComponent implements OnInit {
       localStorage.removeItem("ecrma_login");
     } else
       console.error("[ECRMA] Failed to logout!");
+  }
+
+  public onSignupUser(signupForm: NewType):void {
+    this.authService.findExisting(signupForm.value['email']).subscribe(
+      (existing: User) => {
+        if(existing == null) {
+            this.authService.addUser(signupForm.value).subscribe(
+            (user: User) => {
+              if(user == null) {
+                console.error("[ECRMA] Failed to login!");
+                window.alert("[ECRMA] Failed to login!");
+              
+              }  else {
+                const loginInfo = JSON.stringify({ 
+                  'uuid' : user.uuid, 
+                  'email': user.email,
+                  'role' : user.is_admin ? 'admin' : 'user', 
+                })
+                console.log("[ECRMA] Sign up successful", loginInfo)
+                localStorage.setItem("ecrma_login", loginInfo);
+                if(user.is_admin == true) {
+                  this.router.navigate(['/candidates'])
+                } else {
+                  this.router.navigate(['/candidates/search-name'])
+                }
+              }
+            }
+          );
+        } else
+          window.alert("A user with that email already exists!");
+      }
+    )
   }
 
 }

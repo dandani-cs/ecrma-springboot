@@ -9,6 +9,7 @@ public interface IUserService {
     User addUser(User user);
     User updateUser(User user);
     User getUser(long id);
+    User findByEmail(String email);
     User findByEmailAndPassword(String email, String password);
     User findByUUID(String uuid);
 }
