@@ -88,15 +88,15 @@
       </div> <!-- nav row -->
 
         <!--delete modal-->
-        <a *ngFor="let election of elections"> 
+        <a *ngFor="let election of elections" style="text-decoration: none;"> 
         <div class="modal fade election-list" id="elec-del-modal-{{election.elecper_id}}">
           <div class="modal-dialog">
               <div class="modal-content">
                   <div class="modal-header">  
-                      <h4> Delete Election Period </h4>
+                      <h4 style="color: black"> Delete Election Period </h4>
                   </div>
                   <div class="modal-body" >
-                      <p style="text-align: center; font-size: 20px;"> Are you sure you want to delete <br> election name: {{ election.name }} </p>
+                      <p style="text-align: center; font-size: 20px; color: black;"> Are you sure you want to delete <br> election name: {{ election.name }} </p>
                   </div>
                   <div class="modal-footer">
                       <div class="container">
@@ -121,10 +121,10 @@
               <div class="modal-dialog">
                   <div class="modal-content">
                       <div class="modal-header">  
-                        <h4> Archive Election Period </h4>
+                        <h4 style="color: black"> Archive Election Period </h4>
                       </div>
                       <div class="modal-body" >
-                        <p style="text-align: center; font-size: 20px;"> Are you sure you want to archive <br> election period: {{election.name}} </p>
+                        <p style="text-align: center; font-size: 20px; color: black"> Are you sure you want to archive <br> election period: {{election.name}} </p>
                       </div>
                       <div class="modal-footer">
                           <div class="container">
