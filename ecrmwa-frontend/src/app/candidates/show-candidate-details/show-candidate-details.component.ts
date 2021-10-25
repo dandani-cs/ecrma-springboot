@@ -24,6 +24,7 @@ export class ShowCandidateDetailsComponent implements OnInit {
       const info = JSON.parse(loginInfo);
       this.is_admin = info['role'] === 'admin';
     }
+    
     this.route.params.forEach((params: Params) => {
       if (params['id'] !== undefined) {
         this.id = params['id'];

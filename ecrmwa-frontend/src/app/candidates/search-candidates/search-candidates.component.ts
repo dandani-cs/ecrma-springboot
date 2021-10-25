@@ -10,10 +10,16 @@ import { CandidateService } from '../service/candidate-service.service';
 export class SearchCandidatesComponent implements OnInit {
   candidates: Candidate[] = [];
   results:    Candidate[] = [];
+  is_admin: boolean = false;
 
   constructor(private candidateService: CandidateService) { }
 
   ngOnInit(): void {
+    let loginInfo = localStorage.getItem("ecrma_login")!;
+    if(loginInfo != null) {
+      const info = JSON.parse(loginInfo);
+      this.is_admin = info['role'] === 'admin';
+    }
     this.getCandidates();
   }
 
