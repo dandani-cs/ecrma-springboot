@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Candidate } from '../model/candidate';
+import { map } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +32,9 @@ export class CandidateService {
 
   public editCandidate(id: number, json: any): Observable<any> {
     return this.http.put(this.apiURL + "edit-candidate/" + id, json);
+  }
+
+  public getCandidateJson(id: number) {
+    return this.http.get(this.apiURL + "get-candidate/" + id);
   }
 }
