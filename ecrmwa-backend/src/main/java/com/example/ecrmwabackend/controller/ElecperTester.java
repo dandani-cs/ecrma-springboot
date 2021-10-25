@@ -40,9 +40,8 @@ public class ElecperTester {
         elecperService.deleteElecper(elecper_id);
     }
 
-    @RequestMapping(value = "/ElecperTester/updateElecperArchive/{elecper_id}/{archive}", method = RequestMethod.PATCH)
-    public Elecper updateElecperArchive(@PathVariable Long elecper_id, @PathVariable boolean archive) {
-        elecperService.updateElecperArchive(elecper_id, archive);
-        return getElecper(elecper_id);
+    @RequestMapping(value = "/ElecperTester/updateElecperArchive/{elecper_id}", method = RequestMethod.PATCH)
+    public void updateElecperArchive(@PathVariable Long elecper_id) {
+        elecperService.updateElecperArchive(elecper_id);
     }
 }
