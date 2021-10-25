@@ -120,7 +120,7 @@
                 <p class = "p5"> Campaigns </p>
             </div>
             <span class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: -40px;">
-                <button class="btn btn-primary bbutton1" type="button"  style="font-size: 15px;">Add Campaign</button> &nbsp;
+                <a *ngIf="is_admin" href="/campaigns/add"><button class="btn btn-primary bbutton1" type="button"  style="font-size: 15px;">Add Campaign</button></a> &nbsp;
             </span>    
             <hr>
             
