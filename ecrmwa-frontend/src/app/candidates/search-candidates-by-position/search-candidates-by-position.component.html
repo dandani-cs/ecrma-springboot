@@ -73,16 +73,14 @@
                       <div class="col-md-2" style="padding:0px;">
                         <img src="assets/candidates/{{campaign.candidate.image_path}}" class="img-fluid rounded-start" alt="...">
                       </div>
-                      <div class="col-md-8 d-flex align-items-stretch" style="padding:0px;">
+                      <div class="col-md-10 d-flex align-items-stretch" style="padding:0px;">
                         <div class="card-body">
                           <h5 class="card-title">{{campaign.candidate.last_name | uppercase }}, {{campaign.candidate.first_name | titlecase}} {{campaign.candidate.middle_initial}}. </h5>
                           <p class="card-text"><b class="main-color">Platforms:</b> {{ campaign.platform }}</p>
                           <p class="card-text"><small class="text-muted"></small></p>
                         </div>
                         <div class="card-footer text-muted">
-                          <i class="fs-5 bi bi-info-circle-fill"></i>
-                          <i class="fs-5 bi bi-pencil-fill"></i>
-                          <i class="fs-5 bi bi-trash-fill"></i>
+                          <a href=""> <i class="fs-5 bi bi-info-circle-fill" ></i> </a>
                         </div> <!-- footer -->
                       </div>
                     </div>
