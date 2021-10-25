@@ -59,14 +59,14 @@
             <br><br><br><br><br>
             <div class="col-md-6">
               <label for="start-date" class="form-label"> <h5> Start Date </h5> </label> <br>
-              <input type="date" name="sdate" class="form-control" id="start-date"  value="{{election.sdate}}" min="2021-01-01" max="2021-12-31" style="width: 100%;" ngModel>
+              <input type="date" name="sdate" class="form-control" id="start-date"  value="{{election.sdate}}" min="1950-01-01" max="2022-12-31" style="width: 100%;" ngModel>
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <div class="col-md-6">
               <label for="end-date" class="form-label"> <h5> End Date </h5></label> <br>
-              <input type="date" name="fdate" class="form-control" id="end-date"  value="{{election.fdate}}" min="2021-01-01" max="2021-12-31" style="width: 100%;" ngModel>
+              <input type="date" name="fdate" class="form-control" id="end-date"  value="{{election.fdate}}" min="1950-01-01" max="2022-12-31" style="width: 100%;" ngModel>
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -76,7 +76,7 @@
             <input type="hidden" id="archived" name="elecper_id" value="{{election.elecper_id}}" ngModel>
 
             <div class="col-12">
-              <button class="btn btn-primary add-elec-btn" type="submit" > Save </button>
+              <button class="btn btn-primary add-elec-btn" type="submit" style="background-color: #21618C; float: right; margin-top: 20px; padding-left: 15px; padding-right: 15px;"> Save </button>
             </div>
           </form>
         </div> <!--main-content -->

@@ -133,3 +133,7 @@ body {
   font-size: 25px;
   cursor: pointer;
 }
+
+a:hover{
+    color: black;
+}
