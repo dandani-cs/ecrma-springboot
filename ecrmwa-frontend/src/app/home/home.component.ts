@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
           if(user.is_admin == true) {
             this.router.navigate(['/candidates'])
           } else {
-            this.router.navigate(['/search'])
+            this.router.navigate(['/candidates/search-name'])
           }
         }
       }
@@ -72,6 +72,52 @@ export class HomeComponent implements OnInit {
       localStorage.removeItem("ecrma_login");
     } else
       console.error("[ECRMA] Failed to logout!");
+  }
+
+  public onSignupUser(signupForm: NewType):void {
+    signupForm.value['is_admin']     = false;
+    signupForm.value['is_logged_in'] = false;
+    console.log(signupForm.value);
+    this.authService.findExisting(signupForm.value['email']).subscribe(
+      (existing: User) => {
+
+        // If no existing user
+        if(existing == null) {
+            this.authService.addUser(signupForm.value).subscribe(
+            (newUser: User) => {
+              if(newUser == null) {
+                console.error("[ECRMA] Failed to sign up!");
+                window.alert("[ECRMA] Failed to sign up!");
+              }  else {
+                this.authService.authenticateUser(signupForm.value).subscribe(
+                  (authUser: User) => {
+                    if(authUser == null) {
+                      console.error("[ECRMA] Failed to login!");
+                      window.alert("[ECRMA] Failed to login!");
+                    
+                    }  else {
+                      const loginInfo = JSON.stringify({ 
+                        'uuid' : authUser.uuid, 
+                        'email': authUser.email,
+                        'role' : authUser.is_admin ? 'admin' : 'user', 
+                      })
+                      console.log("[ECRMA] ", loginInfo)
+                      localStorage.setItem("ecrma_login", loginInfo);
+                      if(authUser.is_admin == true) {
+                        this.router.navigate(['/candidates'])
+                      } else {
+                        this.router.navigate(['/candidates/search-name'])
+                      }
+                    }
+                  }
+                )
+              }
+            }
+          );
+        } else
+          window.alert("A user with that email already exists!");
+      }
+    )
   }
 
 }

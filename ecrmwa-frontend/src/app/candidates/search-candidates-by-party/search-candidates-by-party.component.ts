@@ -13,18 +13,24 @@ import { CandidateService } from '../service/candidate-service.service';
 })
 export class SearchCandidatesByPartyComponent implements OnInit {
   candidates: Candidate[] = [];
-  results: Candidate[] = [];
+  results: Campaign[] = [];
   campaigns: Campaign[]  = [];
   elecpers: Elecper[] = [];
   parties: string[] = [];
   elecPerSelect: HTMLInputElement | undefined;
   partySelect: HTMLInputElement | undefined;
+  is_admin: boolean = false;
 
   constructor(private candidateService: CandidateService,
               private campaignService: CampaignService,
               private elecperService: Elecperservice) { }
 
   ngOnInit(): void {
+    let loginInfo = localStorage.getItem("ecrma_login")!;
+    if(loginInfo != null) {
+      const info = JSON.parse(loginInfo);
+      this.is_admin = info['role'] === 'admin';
+    }
     this.getCandidates();
     this.getCampaigns();
     this.getElecPers();
@@ -38,8 +44,7 @@ export class SearchCandidatesByPartyComponent implements OnInit {
   private getCandidates(): void {
     this.candidateService.getCandidates().subscribe(
       (data: Candidate[]) => { 
-        this.candidates = data
-        this.results = data;
+        this.candidates = data;
       }
     );
   }
@@ -48,6 +53,7 @@ export class SearchCandidatesByPartyComponent implements OnInit {
     this.campaignService.getCampaigns().subscribe(
       (data: Campaign[]) => {
         this.campaigns = data;
+        this.results = data;
         console.log("getCampaigns");
       }
     )
@@ -80,9 +86,8 @@ export class SearchCandidatesByPartyComponent implements OnInit {
       const is_match_party: boolean = party === "Any party" || campaign.party === party;
 
       if(is_match_eperId && is_match_party) 
-        this.results.push(campaign.candidate);
+        this.results.push(campaign);
     }
-    console.log(this.results);
   }
 
 }

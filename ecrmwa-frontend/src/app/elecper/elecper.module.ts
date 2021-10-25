@@ -24,4 +24,5 @@ import { EditElecperComponent } from './edit-elecper/edit-elecper.component';
   ],
   providers: [Elecperservice]
 })
+
 export class ElecperModule { }

@@ -1,8 +1,56 @@
-<p>Login here!</p>
-<form #loginForm = "ngForm" (ngSubmit) = "onLoginUser(loginForm)">
-    <input type = "text" ngModel name = "email" id = "email"/>
-    <input type = "password" ngModel name = "password" id = "password"/>
-    <button type="submit">Login</button>
-</form>
+<div class="sub-body">
+		<div class="container-fluid " style="float:center; margin-top: 90px; margin-bottom: 50px;">
+			<div class = "container col-sm-3 col-md-4  col-lg-3  col-xl-3 " style="background-color: #fff; padding:40px; margin-top: 50px;">
+			
+				<!--cancel-btn--------------->
+				<div style="margin:-20px;color: #215275; padding: 10px; cursor:pointer">
+				<a href="#" class="sign-up-cancel-btn" >
+					<i class="fas fa-times"></i>
+				</a>
+				</div>
+				<!--heading-------->
+				<strong style = "font-size: 20px; font-weight:plain; text-align: center; margin: 0 auto;">SIGN IN</strong>
+				<hr>
+			<!--form------------------------>
+				<form #loginForm = "ngForm" (ngSubmit) = "onLoginUser(loginForm)">
+					<!--email---->
+					<label>Email<samp>*</samp></label>
+					<div class="input-group mb-3">
+					  <span class="input-group-text" id="basic-addon1" style="background-color:#fff"><i class="far fa-paper-plane"></i></span>
+					  <input type="text" ngModel name = "email" id = "email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+					</div>
+				
+					<!--password---->
+					<label>Password<samp>*</samp></label>
+					<div class="input-group mb-3">
+					  <span class="input-group-text" id="basic-addon1" style="background-color:#fff"><i class="fas fa-lock"></i></span>
+					  <input type="password" ngModel name = "password" id = "password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+					</div>
 
-<button (click)="onLogoutUser()">Logout</button>
+					<!--login-btn-->
+
+					<div class="d-grid gap-2 d-md-flex justify-content-md-center" style="margin-bottom: 10px;">
+							<button class="btn btn-primary bbutton1" type="submit">LOGIN</button> 
+					</div>
+
+                    <!--logout-btn-->
+
+					<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                        <button class="btn btn-primary bbutton1" (click)="onLogoutUser()" type="submit">LOGOUT</button> 
+                    </div>
+
+					<!--forget------------>
+					<br>
+					<a href="#" class="forget">Forgot Your Password?</a>
+				</form>
+				
+				<hr>
+				<!--relative-bottom-text------------------->
+			<div class="relative-text">
+				<span style="font-size:17px; text-align: center;"><b>WELCOME TO THIS SITE</b></span> 
+				<p class = "text-muted"> If you are an Admin, please login to access and manage the elections. </p>
+			</div>
+			</div>
+		</div>
+</div>
+	

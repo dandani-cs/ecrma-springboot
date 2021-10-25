@@ -16,6 +16,9 @@ import { CampaignService } from '../service/campaign.service';
 export class AddCampaignComponent implements OnInit {
   candidates: Candidate[] = [];
   elections: Elecper[] = [];
+  id: number = 0;
+  currentCandidate: Candidate = new Candidate();
+  currentElection: Elecper = new Elecper();
   
 
   constructor(private campaignService: CampaignService,
@@ -32,14 +35,31 @@ export class AddCampaignComponent implements OnInit {
     this.elecperService.getElecpers().subscribe((data: Elecper[]) => (this.elections = data));
   }
 
-  onSubmit(addCampaign: NgForm) {
-    addCampaign.value['candidate'] = this.candidateService.getCandidate(addCampaign.value['candidate']);
-    addCampaign.value['elecper'] = this.elecperService.getElecper(addCampaign.value['elecper']);
-    console.log(addCampaign.value);
-    this.campaignService.addCampaign(addCampaign.value).subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error)
-    );
-    this.router.navigate(['/candidates/show/' + addCampaign.value['id']]);
-  } 
+  onSubmit(addCampaign: NgForm): void {
+    let candidate_id =  addCampaign.value['candidate'];
+    let eper_Id = addCampaign.value['elecper'];
+
+    this.candidateService.getCandidate(candidate_id).subscribe(
+      (candidate: Candidate) => {
+        this.elecperService.getElecper(eper_Id).subscribe(
+          (eper: Elecper) => {
+            console.log("Found candidate", candidate);
+            console.log("Found eper", candidate);
+
+            addCampaign.value['candidate'] = candidate;
+            addCampaign.value['elecper'] = eper;
+            console.log("FORM VALUE", addCampaign.value);
+
+            this.campaignService.addCampaign(addCampaign.value).subscribe(
+              (response) => {
+                console.log(response);
+                this.router.navigate(['/candidates/show/' + addCampaign.value['candidate'].id])
+              },
+              (error) => console.log(error)
+            );
+          }
+        )
+      }
+    )
+  }
 }
