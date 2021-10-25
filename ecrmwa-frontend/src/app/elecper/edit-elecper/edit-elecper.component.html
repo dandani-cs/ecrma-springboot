@@ -65,7 +65,7 @@
           <form #editElecper="ngForm" (ngSubmit)="onSubmit(editElecper)" class="row g-3 needs-validation add-elec-con" novalidate>
             <div class="col-md-12">
               <label for="election-name" class="form-label"> <h4> Election Name </h4></label>
-              <input type="text" name="name" class="form-control" id="validationCustom01" value="{{election.name}}" name="name" ngModel required>
+              <input type="text" name="name" class="form-control" id="validationCustom01" ngModel="{{election.name}}" name="name"  required>
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -73,23 +73,23 @@
             <br><br><br><br><br>
             <div class="col-md-6">
               <label for="start-date" class="form-label"> <h5> Start Date </h5> </label> <br>
-              <input type="date" name="sdate" class="form-control" id="start-date"  value="{{election.sdate}}" min="1950-01-01" max="2022-12-31" style="width: 100%;" ngModel>
+              <input type="date" name="sdate" class="form-control" id="start-date"  ngModel="{{election.sdate}}" min="1950-01-01" max="2022-12-31" style="width: 100%;" >
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
             <div class="col-md-6">
               <label for="end-date" class="form-label"> <h5> End Date </h5></label> <br>
-              <input type="date" name="fdate" class="form-control" id="end-date"  value="{{election.fdate}}" min="1950-01-01" max="2022-12-31" style="width: 100%;" ngModel>
+              <input type="date" name="fdate" class="form-control" id="end-date"  ngModel="{{election.fdate}}" min="1950-01-01" max="2022-12-31" style="width: 100%;" >
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
 
-            <input type="hidden" id="archived" name="archived" value="{{election.archived}}" ngModel>
-            <input type="hidden" id="archived" name="elecper_id" value="{{election.elecper_id}}" ngModel>
+            <input type="hidden" id="archived" name="archived" ngModel="{{election.archived}}" >
+            <input type="hidden" id="archived" name="elecper_id" ngModel="{{election.elecper_id}}" >
 
-            <div class="col-12">=
+            <div class="col-12">
               <button class="btn btn-primary add-elec-btn" type="submit" style="background-color: #21618C; float: right; margin-top: 20px; padding-left: 15px; padding-right: 15px;"> Save </button>
             </div>
           </form>

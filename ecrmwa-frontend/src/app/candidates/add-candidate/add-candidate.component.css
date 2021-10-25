@@ -17,6 +17,9 @@ body {
     margin-top: -5px;
     width: 250px;
     overflow-x: hidden;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: lightgray;
 }
 
 .p2 {
