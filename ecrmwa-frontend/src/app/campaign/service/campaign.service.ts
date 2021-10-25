@@ -33,4 +33,5 @@ export class CampaignService {
     return this.http.get<string[]>(this.apiURL + "getPartiesOfElecper/" + id);
   }
 
+
 }

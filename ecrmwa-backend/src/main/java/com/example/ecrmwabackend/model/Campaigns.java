@@ -28,14 +28,14 @@ public class Campaigns {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long campaign_id;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     //@Column(nullable = false)
     @JsonIgnoreProperties(value = {"Campaigns", "hibernateLazyInitializer"})
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "id")
     private Candidate candidate;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     //@Column(nullable = false)
     @JsonIgnoreProperties(value = {"Campaigns", "hibernateLazyInitializer"})
     @OnDelete(action = OnDeleteAction.CASCADE)
