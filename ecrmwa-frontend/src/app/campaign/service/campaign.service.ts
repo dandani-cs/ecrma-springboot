@@ -18,7 +18,15 @@ export class CampaignService {
   }
 
   public getPositionsOfElecPer(id: number): Observable<string[]> {
-    return this.http.get<string[]>(this.apiURL + '/getPositionsOfElecper/' + id)
+    return this.http.get<string[]>(this.apiURL + 'getPositionsOfElecper/' + id)
+  }
+
+  public getCampaignsPerId(id: number): Observable<Campaign[]> {
+    return this.http.get<Campaign[]>(this.apiURL + 'getCampaignsPerId/' + id);
+  }
+
+  public getPartiesOfElecPer(id: number): Observable<string[]> {
+    return this.http.get<string[]>(this.apiURL + "getPartiesOfElecper/" + id);
   }
 
 }
