@@ -15,7 +15,7 @@
                                 <a href="/candidates/show-candidates" class="nav-link px-0"> <i class="fs-6 bi bi-people text-white"></i> <span class="d-none d-sm-inline text-white">Show candidates </span></a>
                             </li>
                             <li class="ms-4">
-                                <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-person-plus text-white"></i> <span class="d-none d-sm-inline text-white" >Add candidate</span> </a>
+                                <a href="/candidates/add" class="nav-link px-0"> <i class="fs-6 bi bi-person-plus text-white"></i> <span class="d-none d-sm-inline text-white" >Add candidate</span> </a>
                             </li>
                         </ul>
                     </li>
@@ -90,7 +90,7 @@
                       <div class="col-md-10 d-flex align-items-stretch" style="padding:0px;">
                         <div class="card-body">
                           <h5 class="card-title">{{candidate.last_name | uppercase }}, {{candidate.first_name | titlecase}} {{candidate.middle_initial}}. </h5>
-                          <p class="card-text"><b class="main-color">Platforms:</b> Better healthcare system, provide educational support to the marginalized, address the needs of farmers and fishermen.</p>
+                          <p class="card-text"><b class="main-color">{{candidate.degree}}</b></p>
                           <p class="card-text"><small class="text-muted"></small></p>
                         </div>
                         <div class="card-footer text-muted">
