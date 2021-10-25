@@ -76,9 +76,9 @@
                   <a href="#elec-del-modal-{{election.elecper_id}}" data-toggle="modal" data-target="#elec-del-modal-{{election.elecper_id}}" ><i class="fs-5 bi bi-trash-fill"></i> </a>
                 </small>
               </div>
-              <p class="mb-0"><b>{{election.fdate}}</b></p>
-              <small *ngIf="election.archived; else activeArchived">Archived</small>
-              <ng-template #activeArchived>Active</ng-template>
+              <p class="mb-0 date-link"><b>{{election.fdate}}</b></p>
+              <small *ngIf="election.archived; else activeArchived" class="archived-link"><p> Archived </p></small>
+              <ng-template #activeArchived> <p class="active-link"> Active </p> </ng-template>
               <br>
             </a>
           </div> <!--list group -->

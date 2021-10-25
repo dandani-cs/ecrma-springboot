@@ -2,3 +2,27 @@
 #searchCollapse a, #searchCollapse ul, #searchCollapse i, #searchCollapse span{
     color: white !important;
 }
+
+.date-link{
+    color: black;
+}
+
+.date-link:hover{
+    color: black;
+}
+
+.archived-link{
+    color: black;
+}
+
+.archived-link:hover{
+    color: black;
+}
+
+.active-link{
+    color: black;
+}
+
+.active-link:hover{
+    color: black;
+}
