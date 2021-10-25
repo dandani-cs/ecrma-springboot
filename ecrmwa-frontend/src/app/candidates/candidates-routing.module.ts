@@ -49,6 +49,12 @@ const routes: Routes = [
     path: 'candidates/search-position', 
     component: SearchCandidatesByPositionComponent, 
     data: { expectedRole: 'any' }
+  },
+
+  { 
+    path: 'candidates/search-party', 
+    component: SearchCandidatesByPositionComponent, 
+    data: { expectedRole: 'any' }
   }
 
 ];
