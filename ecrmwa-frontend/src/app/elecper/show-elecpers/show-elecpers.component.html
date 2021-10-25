@@ -1,45 +1,58 @@
 <div class="container-fluid navbar-vertical">
   <div class="row flex-nowrap">
-      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-              <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                  <span class="fs-5 d-none d-sm-inline">Menu</span>
-              </a>
-              <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                  <li>
-                      <a href="#candidatesCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                          <i class="fs-4 bi-person"></i> <span class="ms-1 d-none d-sm-inline">Candidates</span> </a>
-                      <ul class="collapse show nav flex-column ms-1" id="candidatesCollapse" data-bs-parent="#menu">
+<div class="col-sm-2 col-md-2 col-xl-2" style="background-color:#215275; ">
+       
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Menu</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li>
+                        <a href="#candidatesCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-person text-white"></i> <span class="ms-1 d-none d-sm-inline text-white">Candidates</span> </a>
+                        <ul class="collapse show nav flex-column ms-1" id="candidatesCollapse" data-bs-parent="#menu">
+                            <li class="ms-4">
+                                <a href="/candidates/show-candidates" class="nav-link px-0"> <i class="fs-6 bi bi-people text-white"></i> &nbsp; <span class="d-none d-sm-inline text-white">Show Candidates </span></a>
+                            </li>
+                            <li class="ms-4">
+                                <a href="/candidates/add" class="nav-link px-0"> <i class="fs-6 bi bi-person-plus text-white"></i>&nbsp; <span class="d-none d-sm-inline text-white" >Add Candidate</span> </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#elecperCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-calendar-event text-white"></i> <span class="ms-1 d-none d-sm-inline text-white">Elections</span> </a>
+                        <ul class="collapse show nav flex-column ms-1" id="elecperCollapse" data-bs-parent="#menu">
+                            <li class="ms-4">
+                                <a href="elections/all" class="nav-link px-0"> <i class="fs-6 bi bi-calendar-range text-white"></i>&nbsp; <span class="d-none d-sm-inline text-white">Show Elections</span> </a>
+                            </li>
+                            <li class="ms-4">
+                                <a href="elections/add" class="nav-link px-0"> <i class="fs-6 bi bi-calendar-plus text-white"></i> &nbsp;<span class="d-none d-sm-inline text-white">Add Election </span> </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                      <a href="#searchCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle" style="color: white;">
+                          <i class="fs-4 bi bi-search"></i> <span class="ms-1 d-none d-sm-inline">Search</span> </a>
+                      <ul class="collapse show nav flex-column ms-1" id="searchCollapse" data-bs-parent="#menu">
                           <li class="ms-4">
-                              <a href="candidates/show-candidates" class="nav-link px-0"> <i class="fs-6 bi bi-people"></i> &nbsp; <span class="d-none d-sm-inline">Show Candidates </span></a>
+                          <a href="candidates/search-name" class="nav-link px-0"> <i class="fs-6 bi bi-person-badge"></i>  &nbsp; <span class="d-none d-sm-inline">Search Candidate</span>  </a>
                           </li>
                           <li class="ms-4">
-                              <a href="candidates/add" class="nav-link px-0"> <i class="fs-6 bi bi-person-plus"></i> &nbsp; <span class="d-none d-sm-inline">Add Candidate</span> </a>
+                              <a href="candidates/search-position" class="nav-link px-0"> <i class="fs-6 bi bi-list-task"></i>  &nbsp; <span class="d-none d-sm-inline">Search by Position</span>  </a>
+                          </li>
+                          <li class="ms-4">
+                              <a href="candidates/search-party" class="nav-link px-0"> <i class="fs-6 bi bi-collection-fill"></i>  &nbsp; <span class="d-none d-sm-inline">Search by Party</span>  </a>
                           </li>
                       </ul>
                   </li>
-                  <li>
-                      <a href="#elecperCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                          <i class="fs-4 bi-calendar-event"></i> <span class="ms-1 d-none d-sm-inline">Elections</span> </a>
-                      <ul class="collapse show nav flex-column ms-1" id="elecperCollapse" data-bs-parent="#menu">
-                          <li class="ms-4">
-                              <a href="elections/all" class="nav-link px-0"> <i class="fs-6 bi bi-calendar-range"></i> &nbsp;<span class="d-none d-sm-inline">Show Elections</span> </a>
-                          </li>
-                          <li class="ms-4">
-                              <a href="elections/add" class="nav-link px-0"> <i class="fs-6 bi bi-calendar-plus"></i>&nbsp; <span class="d-none d-sm-inline">Add Election </span> </a>
-                          </li>
-                      </ul>
+                <li>
+                    <a href="/login" data-bs-toggle="collapse" style="color:white;" class="nav-link px-0 align-middle">
+                        <i class="fs-4 bi-box-arrow-left"></i> <span class="ms-1 d-none d-sm-inline">Log out</span> </a>
                   </li>
-              </ul>
-              <hr>
-        
-              <label for="menuutoggle" class="checklabel">user &nbsp;<i class="arrow down"></i></label>
-              <input id="menuutoggle" class="checkhack" type="checkbox" />
-              <ul id="menuu">
-              <li style="list-style: none"><a href="#" >Sign Out</a></li>
-              </ul>
-              </div>
-            </div>
+            </ul>
+          </div>
+          </div>
         
         <div class="main-content container-fluid col py-3">
           <div class="row">

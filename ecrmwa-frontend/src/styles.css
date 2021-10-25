@@ -38,6 +38,11 @@ body {
   .navbar-vertical a {
     color: white;
   }
+
+  .navbar-vertical a:hover {
+    color: white !important;
+    text-decoration: underline;
+  }
   
   .checkhack {
     display: none;

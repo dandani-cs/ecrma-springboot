@@ -134,29 +134,26 @@
           <!--heading-------->
           <strong>Sign Up</strong>
       <!--form------------------------>
-          <form>
-              <!--password---->
-              <label>Full Name<samp>*</samp></label>
-              <div class="name">
-                  <i class="fs-6 bi-pen"></i>
-                  <input type="text" name="fullname" required>
-              </div>
-              <!--email---->
-              <label>Email<samp>*</samp></label>
-              <div class="email">
-                  <i class="fs-6 bi-envelope"></i>
-                  <input type="email" name="email" required>
-              </div>
-              <!--password---->
-              <label>Password<samp>*</samp></label>
-              <div class="password">
-                  <i class="fs-6 bi-lock"></i>
-                  <input type="password" name="password" required>
-              </div>
-              
-              <!--login-btn-->
-              <input type="submit" name="login" class="sign-up" value="Sign Up">
-          </form>
+            <form #signupForm = "ngForm" (ngSubmit) = "onSignupUser(signupForm)">
+                <!--email---->
+                <input type="hidden" ngModel name ="is_admin" name = "is_admin" value = "false" required>
+                <input type="hidden" ngModel name ="is_logged_in" name = "is_logged_in" value = "false" required>
+                <label>Email<samp>*</samp></label>
+                <div class="email">
+                    <i class="fs-6 bi-envelope"></i>
+                    <input type="email" ngModel name = "email" name="email" required>
+                </div>
+                <!--password---->
+                <label>Password<samp>*</samp></label>
+                <div class="password">
+                    <i class="fs-6 bi-lock"></i>
+                    <input type="password" ngModel name = "password" name="password" required>
+                </div>
+                <!--login-btn-->
+                <input type="submit" name="sign-up" class="sign-up" value="SignUp">
+                <!--forget------------>
+                <a class="forget">Forget Your Password?</a>
+            </form>
           <!--relative-bottom-text------------------->
       <div class="relative-text">
           <span>Welcome To This Site</span>
@@ -179,7 +176,7 @@
                     <br>
                     <img id="icon" src="/assets/images/search.png">
                     <br>
-                    <a href="#"><h6 style="text-align: center;"> View More </h6> </a>
+                    <a href="/candidates/search-party"><h6 style="text-align: center;"> View More </h6> </a>
                   </div>
                   <div class= "col-md-3" id="service-panel">
                     <h3 style="text-align: center;"> Search Candidate </h3>
@@ -187,17 +184,17 @@
                     <br>
                     <img id="icon" src="/assets/images/candidate.png">
                     <br>
-                    <a href="#"><h6 style="text-align: center;"> View More </h6> </a>
+                    <a href="/candidates/search-name"><h6 style="text-align: center;"> View More </h6> </a>
                   </div>
                   <div class= "col-md-3" id="service-panel">
                     <div class="icon">
                     </div>
-                    <h3 style="text-align: center;"> Search Election </h3>
-                    <p style="text-align: center;"> Search for the Election period that you want to view for today. You can also find past election periods from our selections.</p>
+                    <h3 style="text-align: center;"> Search Position </h3>
+                    <p style="text-align: center;"> Search for the position of current candidates available in the election. You can also find the position of past candidates here.</p>
                     <br>
                     <img id="icon" src="/assets/images/vote.png">
                     <br>
-                    <a href="election/all"><h6 style="text-align: center;"> View More </h6> </a>
+                    <a href="/candidates/search-position"><h6 style="text-align: center;"> View More </h6> </a>
                   </div>
                 </div>
           </div>
@@ -255,9 +252,9 @@
   
                   <br><hr style="border: 1px solid white; width: 35%"> <br>
   
-                  <a class="footerlinks" href="#"> Show Candidates </a> <br>
-                  <a class="footerlinks" href="#"> Show Election Periods </a> <br>
-                  <a class="footerlinks" href="#"> Show Cmpaigns </a> <br>
+                  <a class="footerlinks" href="#"> Search Candidates </a> <br>
+                  <a class="footerlinks" href="#"> Search Position </a> <br>
+                  <a class="footerlinks" href="#"> Search Party </a> <br>
   
               </div>
               <div class="col-md-3" style="margin-top: 5%">

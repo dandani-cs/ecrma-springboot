@@ -1,49 +1,60 @@
 <div class="container-fluid navbar-vertical">
   <div class="row "  >
     <div class="col-sm-2 col-md-2 col-xl-2" style="background-color:#215275; ">
-       
-      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-          <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-              <span class="fs-5 d-none d-sm-inline">Menu</span>
-          </a>
-          <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-              <li>
-                  <a href="#candidatesCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                      <i class="fs-4 bi-person text-white"></i> <span class="ms-1 d-none d-sm-inline text-white">Candidates</span> </a>
-                  <ul class="collapse show nav flex-column ms-1" id="candidatesCollapse" data-bs-parent="#menu">
-                      <li class="ms-4">
-                          <a href="/candidates/show-candidates" class="nav-link px-0"> <i class="fs-6 bi bi-people text-white"></i> <span class="d-none d-sm-inline text-white">Show candidates </span></a>
-                      </li>
-                      <li class="ms-4">
-                          <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-person-plus text-white"></i> <span class="d-none d-sm-inline text-white" >Add candidate</span> </a>
-                      </li>
-                  </ul>
-              </li>
-              <li>
-                  <a href="#elecperCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                      <i class="fs-4 bi-calendar-event text-white"></i> <span class="ms-1 d-none d-sm-inline text-white">Elections</span> </a>
-                  <ul class="collapse show nav flex-column ms-1" id="elecperCollapse" data-bs-parent="#menu">
-                      <li class="ms-4">
-                          <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-calendar-range text-white"></i> <span class="d-none d-sm-inline text-white">Show  elections</span> </a>
-                      </li>
-                      <li class="ms-4">
-                          <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-calendar-plus text-white"></i> <span class="d-none d-sm-inline text-white">Add election </span> </a>
-                      </li>
-                  </ul>
-              </li>
-          </ul>
-<hr>
-          <div class="dropdown pb-4">
-              <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                  <span class="d-none d-sm-inline mx-1">user</span>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                  <li><a class="dropdown-item" href="#">Sign out</a></li>
-              </ul>
-          </div>
 
-        </div>
-    </div>
+        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <span class="fs-5 d-none d-sm-inline">Menu</span>
+            </a>
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                <li *ngIf="is_admin">
+                    <a href="#candidatesCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                        <i class="fs-4 bi-person text-white"></i> <span class="ms-1 d-none d-sm-inline text-white">Candidates</span> </a>
+                    <ul class="collapse show nav flex-column ms-1" id="candidatesCollapse" data-bs-parent="#menu">
+                        <li class="ms-4">
+                            <a href="/candidates/show-candidates" class="nav-link px-0"> <i class="fs-6 bi bi-people text-white"></i> <span class="d-none d-sm-inline text-white">Show candidates </span></a>
+                        </li>
+                        <li class="ms-4">
+                            <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-person-plus text-white"></i> <span class="d-none d-sm-inline text-white" >Add candidate</span> </a>
+                        </li>
+                    </ul>
+                </li>
+                <li *ngIf="is_admin">
+                    <a href="#elecperCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                        <i class="fs-4 bi-calendar-event text-white"></i> <span class="ms-1 d-none d-sm-inline text-white">Elections</span> </a>
+                    <ul class="collapse show nav flex-column ms-1" id="elecperCollapse" data-bs-parent="#menu">
+                        <li class="ms-4">
+                            <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-calendar-range text-white"></i> <span class="d-none d-sm-inline text-white">Show  elections</span> </a>
+                        </li>
+                        <li class="ms-4">
+                            <a href="#" class="nav-link px-0"> <i class="fs-6 bi bi-calendar-plus text-white"></i> <span class="d-none d-sm-inline text-white">Add election </span> </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                  <a href="#searchCollapse" data-bs-toggle="collapse" class="nav-link px-0 align-middle" style="color: white;">
+                      <i class="fs-4 bi bi-search"></i> <span class="ms-1 d-none d-sm-inline">Search</span> </a>
+                  <ul class="collapse show nav flex-column ms-1" id="searchCollapse" data-bs-parent="#menu">
+                      <li class="ms-4">
+                      <a href="candidates/search-name" class="nav-link px-0"> <i class="fs-6 bi bi-person-badge"></i>  &nbsp; <span class="d-none d-sm-inline">Search Candidate</span>  </a>
+                      </li>
+                      <li class="ms-4">
+                          <a href="candidates/search-position" class="nav-link px-0"> <i class="fs-6 bi bi-list-task"></i>  &nbsp; <span class="d-none d-sm-inline">Search by Position</span>  </a>
+                      </li>
+                      <li class="ms-4">
+                          <a href="candidates/search-party" class="nav-link px-0"> <i class="fs-6 bi bi-collection-fill"></i>  &nbsp; <span class="d-none d-sm-inline">Search by Party</span>  </a>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                <a href="/login" data-bs-toggle="collapse" style="color:white;" class="nav-link px-0 align-middle">
+                    <i class="fs-4 bi-box-arrow-left"></i> <span class="ms-1 d-none d-sm-inline">Log out</span> </a>
+              </li>
+            </ul>
+
+  
+          </div>
+      </div>
     <div class="col-sm-2 col-md-6  col-lg-10 col-xl-10" style="background-color:#E8E8E8; padding:40px;">
         <div class = "container-fluid header" style="margin-left: -15px;">
             <p class = "p6"> Candidate Information </p>
@@ -52,15 +63,16 @@
         <br>
         <div class = "container col-sm-3 col-md-10  col-lg-10  col-xl-11 " style="background-color: #fff; padding:40px; overflow-x: hidden;">
           <form >
-          <img src="../../assets/candidates/{{candidate.image_path}}" id="ngimg" width="150" height="150" style="border-style:solid" onclick="document.getElementById('imgfile').click();"/>
+          <img src="../../assets/candidates/{{candidate.image_path}}" id="ngimg" width="150" height="180" style="border-style:solid" onclick="document.getElementById('imgfile').click();"/>
           <input type="file" id="imgfile" name="imgfile" accept="image/*" onchange="imgFunc1();" style = "display: none;">
           <div class="container group">
-             <input type="text" class = "form-control personal p2" id="last_name" name="last_name" value="{{candidate.last_name}}" ngModel><br>
-             <input type="text" class = "form-control personal p1" id="middle_initial" name="middle_initial" value="{{candidate.middle_initial}}" maxlength="1" ngModel><br>
-             <input type="text" class = "form-control personal p1" id="first_name" name="first_name" value="{{candidate.first_name}}" ngModel><br>
+             <input type="text" class = "form-control personal p2" id="last_name" name="last_name" value="{{candidate.last_name}}" ngModel disabled><br>
+             <input type="text" class = "form-control personal p1" id="middle_initial" name="middle_initial" value="{{candidate.middle_initial}}" maxlength="1" ngModel disabled><br>
+             <input type="text" class = "form-control personal p1" id="first_name" name="first_name" value="{{candidate.first_name}}" ngModel disabled><br>
              <div class="d-grid gap-2 d-md-block">
              </div>
           </div>
+            <br><br>
             <button class="btn btn-primary bbutton" (click)="onClickEdit(candidate.id)">EDIT</button>
             <button class="btn btn-primary bbutton" (click)="onClickDelete(candidate.id)">DELETE</button>
           <div class="container group1" style="display: inline-block;">
@@ -69,9 +81,9 @@
           <hr>
           <div class="container col-sm-10 col-md-10 col-lg-10 col-xl-10" >
              <div class="input-group mb-3 ">
-                <input type="date" class="form-control personal" placeholder="Birthdate" name = "birth_date" aria-label="Birthdate" value = "{{candidate.birth_date}}" ngModel> &nbsp; &nbsp;
-                <input type="text" class="form-control personal" name="sex" placeholder="Sex" aria-label="Sex" value="{{candidate.sex}}" ngModel> &nbsp; &nbsp;
-                <input type="text" class="form-control personal" name="religion" placeholder="Religion" aria-label="Religion" value="{{candidate.religion}}" ngModel>
+                <input type="date" class="form-control personal" placeholder="Birthdate" name = "birth_date" aria-label="Birthdate" value = "{{candidate.birth_date}}" ngModel disabled> &nbsp; &nbsp;
+                <input type="text" class="form-control personal" name="sex" placeholder="Sex" aria-label="Sex" value="{{candidate.sex}}" ngModel disabled> &nbsp; &nbsp;
+                <input type="text" class="form-control personal" name="religion" placeholder="Religion" aria-label="Religion" value="{{candidate.religion}}" ngModel disabled>
              </div>
              <div class="container" >
                 <div class="row">
@@ -93,21 +105,23 @@
           <hr>
           <div class="container col-sm-10 col-md-10 col-xl-10">
              <div class="input-group mb-3">
-                <input type="text" class="form-control personal" name="degree" placeholder="Course" value="{{candidate.degree}}" aria-label="Course" ngModel> &nbsp; &nbsp;
-                <input type="date" class="form-control personal" name="grad_date" placeholder="Date" value="{{candidate.grad_date}}" aria-label="Date" ngModel>
+                <input type="text" class="form-control personal" name="degree" placeholder="Course" value="{{candidate.degree}}" aria-label="Course" ngModel  disabled> &nbsp; &nbsp;
+                <input type="date" class="form-control personal" name="grad_date" placeholder="Date" value="{{candidate.grad_date}}" aria-label="Date" ngModel disabled>
              </div>
              <div class="input-group mb-3">
-                <input type="text" class="form-control p4" name="university" placeholder="University" aria-label="University" value = "{{candidate.university}}" ngModel>
+                <input type="text" class="form-control p4" name="university" placeholder="University" aria-label="University" value = "{{candidate.university}}" ngModel disabled>
              </div>
           </div>
           <br>
           </form>
 
             
-            <div class="container group1">
+            <div class="container group1" >
                 <p class = "p5"> Campaigns </p>
             </div>
-                
+            <span class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: -40px;">
+                <button class="btn btn-primary bbutton1" type="button"  style="font-size: 15px;">Add Campaign</button> &nbsp;
+            </span>    
             <hr>
             
             <div *ngFor="let campaign of campaigns" class="container-fluid card" style="padding-top:20px; margin-bottom: 20px">

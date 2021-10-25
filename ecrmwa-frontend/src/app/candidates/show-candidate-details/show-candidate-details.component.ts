@@ -14,11 +14,17 @@ export class ShowCandidateDetailsComponent implements OnInit {
   campaigns: Campaign[] = [];
   candidate: Candidate = new Candidate();
   id: number = 0;
+  is_admin = false;
 
   constructor(private campaignService: CampaignService, private candidateService: CandidateService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-
+    let loginInfo = localStorage.getItem("ecrma_login")!;
+    if(loginInfo != null) {
+      const info = JSON.parse(loginInfo);
+      this.is_admin = info['role'] === 'admin';
+    }
+    
     this.route.params.forEach((params: Params) => {
       if (params['id'] !== undefined) {
         this.id = params['id'];

@@ -19,12 +19,18 @@ export class SearchCandidatesByPartyComponent implements OnInit {
   parties: string[] = [];
   elecPerSelect: HTMLInputElement | undefined;
   partySelect: HTMLInputElement | undefined;
+  is_admin: boolean = false;
 
   constructor(private candidateService: CandidateService,
               private campaignService: CampaignService,
               private elecperService: Elecperservice) { }
 
   ngOnInit(): void {
+    let loginInfo = localStorage.getItem("ecrma_login")!;
+    if(loginInfo != null) {
+      const info = JSON.parse(loginInfo);
+      this.is_admin = info['role'] === 'admin';
+    }
     this.getCandidates();
     this.getCampaigns();
     this.getElecPers();

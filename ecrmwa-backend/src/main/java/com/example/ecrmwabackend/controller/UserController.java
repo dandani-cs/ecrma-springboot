@@ -5,6 +5,7 @@ import com.example.ecrmwabackend.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.PreUpdate;
 import java.util.List;
 import java.util.UUID;
 
@@ -34,6 +35,9 @@ public class UserController {
         }
         return authUser;
     }
+
+    @RequestMapping(value = "/api/users/search-email")
+    public User findExisting(@RequestParam String email) { return service.findByEmail(email); }
 
     @RequestMapping(value = "/api/users/login", method = RequestMethod.POST)
     public User loginUser(@RequestBody User credentials)

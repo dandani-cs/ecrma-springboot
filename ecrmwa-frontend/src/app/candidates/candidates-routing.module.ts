@@ -10,6 +10,7 @@ import { EditCandidateComponent } from './edit-candidate/edit-candidate.componen
 
 import { SearchCandidatesComponent } from './search-candidates/search-candidates.component';
 import { SearchCandidatesByPositionComponent } from './search-candidates-by-position/search-candidates-by-position.component';
+import { SearchCandidatesByPartyComponent } from './search-candidates-by-party/search-candidates-by-party.component';
 
 
 const routes: Routes = [
@@ -53,7 +54,7 @@ const routes: Routes = [
 
   { 
     path: 'candidates/search-party', 
-    component: SearchCandidatesByPositionComponent, 
+    component: SearchCandidatesByPartyComponent, 
     data: { expectedRole: 'any' }
   }
 
